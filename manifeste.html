@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Manifeste New Health</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,700..900&family=Libre+Franklin:ital,wght@0,300..900;1,400..700&family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+  /* Page du manifeste New Health. Texte : version publiée et vérifiée sur Notion (28/09/2026).
+     Les cosignataires viennent de membres.json, la même liste que la section « Les boîtes » du site. */
+  :root{
+    --encre:#15239B; --noir:#101116; --papier:#E8E8EC; --papier-clair:#F3F3F6; --gris:#5C5E6B; --filet:#C9C9D2; --jaune:#FFF30F;
+    --sans:"Libre Franklin","Helvetica Neue",Arial,sans-serif;
+    --cond:"Archivo","Arial Narrow",sans-serif;
+    --serif:"Newsreader",Georgia,"Times New Roman",serif;
+    --gut-l:max(16px, env(safe-area-inset-left, 0px));
+    --gut-r:max(16px, env(safe-area-inset-right, 0px));
+    color-scheme:light;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--papier);color:var(--noir);font-family:var(--sans);font-size:17px;line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:inherit}
+  a:focus-visible,.btn:focus-visible{outline:3px solid #3C48B8;outline-offset:3px}
+  .wrap{max-width:1200px;margin:0 auto;padding-left:max(var(--gut-l),clamp(16px,4vw,48px));padding-right:max(var(--gut-r),clamp(16px,4vw,48px))}
+  .narrow{max-width:760px}
+
+  .draft{background:var(--noir);color:var(--papier);font-size:12px;letter-spacing:.08em;text-transform:uppercase;text-align:center;padding:8px 16px}
+  header.bar{position:sticky;top:0;z-index:10;background:var(--papier);border-bottom:2px solid var(--noir)}
+  header.bar .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:60px}
+  .lock{display:inline-flex;align-items:center;gap:9px;text-decoration:none;color:var(--encre)}
+  .lock svg{width:24px;height:24px;fill:var(--encre);flex:none}
+  .lock .lw{font-family:var(--cond);font-stretch:68%;font-weight:900;text-transform:uppercase;font-size:24px;line-height:1;letter-spacing:.01em;border-bottom:5px solid var(--jaune);padding-bottom:3px}
+  .back{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;text-decoration:none}
+  .back:hover{color:var(--encre)}
+
+  .btn{display:inline-block;background:var(--encre);color:var(--papier-clair);text-decoration:none;font-weight:700;text-transform:uppercase;letter-spacing:.06em;font-size:14px;padding:14px 22px;border-radius:999px;border:2px solid var(--encre);transition:background .2s,color .2s;text-align:center}
+  .btn:hover{background:var(--papier-clair);color:var(--encre)}
+  .btn.yellow{background:var(--jaune);color:var(--noir);border-color:var(--jaune)}
+  .btn.yellow:hover{background:transparent;color:var(--jaune)}
+  .label{display:block;font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--encre);margin-bottom:20px}
+
+  .head{background:var(--encre);color:var(--papier-clair)}
+  .head .wrap{padding-block:clamp(48px,7vw,96px) clamp(40px,6vw,72px);position:relative}
+  .head .kick{font-size:clamp(13px,1.4vw,16px);font-weight:700;letter-spacing:.32em;text-transform:uppercase;margin-bottom:14px}
+  .head h1{font-family:var(--cond);font-stretch:68%;font-weight:900;text-transform:uppercase;font-size:clamp(46px,7.4vw,96px);line-height:.92;max-width:15ch;text-wrap:balance}
+  .head .bar-j{display:block;height:clamp(8px,1vw,12px);background:var(--jaune);width:min(100%,560px);margin-top:clamp(16px,2vw,24px)}
+  .head .ast{position:absolute;top:clamp(40px,6vw,80px);right:max(var(--gut-r),clamp(16px,4vw,48px));width:clamp(56px,9vw,110px);height:clamp(56px,9vw,110px);fill:var(--jaune);animation:spin 40s linear infinite}
+  @keyframes spin{to{transform:rotate(360deg)}}
+
+  .text{padding-block:clamp(56px,8vw,96px);border-bottom:2px solid var(--noir)}
+  .lead{font-family:var(--sans);font-weight:700;font-size:clamp(20px,2.2vw,26px);line-height:1.35;margin-bottom:clamp(28px,4vw,44px);text-wrap:pretty}
+  .q{font-family:var(--serif);font-style:italic;font-size:clamp(26px,3.4vw,40px);line-height:1.2;margin-bottom:clamp(28px,4vw,44px);color:var(--encre);text-wrap:balance}
+  .text p.body{font-family:var(--serif);font-size:clamp(19px,1.9vw,22px);line-height:1.55}
+  .text p.body + p.body{margin-top:1em}
+  .mark{background:linear-gradient(transparent 60%,var(--jaune) 60%,var(--jaune) 92%,transparent 92%);box-decoration-break:clone;-webkit-box-decoration-break:clone}
+  .lineage{margin-top:clamp(28px,4vw,40px);display:flex;flex-direction:column;gap:2px}
+  .lineage span{font-weight:900;text-transform:uppercase;font-size:clamp(28px,4vw,48px);line-height:1;color:var(--filet)}
+  .lineage span.now{color:var(--encre)}
+
+  .eng{background:var(--papier-clair);padding-block:clamp(56px,8vw,96px);border-bottom:2px solid var(--noir)}
+  .eng h2{font-weight:900;text-transform:uppercase;font-size:clamp(32px,4.6vw,56px);line-height:.95;margin-bottom:clamp(28px,4vw,40px)}
+  .engage{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:2px solid var(--noir)}
+  .engage article{padding:26px 26px 30px 0;display:flex;flex-direction:column;gap:12px}
+  .engage article + article{padding-left:26px;border-left:1px solid var(--filet)}
+  .engage .n{font-weight:900;font-size:44px;line-height:1;color:var(--encre)}
+  .engage h3{font-size:20px;font-weight:800;text-transform:uppercase;line-height:1.15}
+  .engage ul{list-style:none;display:flex;flex-direction:column;gap:6px;font-family:var(--serif);font-size:19px;line-height:1.35}
+
+  .close{padding-block:clamp(56px,8vw,96px);border-bottom:2px solid var(--noir)}
+  .close p.body{font-family:var(--serif);font-size:clamp(19px,1.9vw,22px);line-height:1.55}
+  .close p.body + p.body{margin-top:1em}
+  .close .refus{margin-top:clamp(32px,5vw,48px);padding-top:24px;border-top:2px solid var(--noir);font-family:var(--serif);font-size:clamp(24px,2.8vw,34px);line-height:1.25;text-wrap:balance}
+  .close .call{margin-top:18px;font-weight:900;text-transform:uppercase;font-size:clamp(22px,2.6vw,30px);line-height:1.1;color:var(--encre)}
+
+  .sign{padding-block:clamp(56px,8vw,96px)}
+  .sign h2{font-weight:900;text-transform:uppercase;font-size:clamp(32px,4.6vw,56px);line-height:.95;margin-bottom:14px}
+  .sign .intro{font-family:var(--serif);font-size:clamp(19px,2vw,22px);max-width:640px}
+  .cos{list-style:none;margin-top:32px;border-top:2px solid var(--noir)}
+  .cos li{display:grid;grid-template-columns:180px minmax(0,1fr) auto;gap:20px;align-items:center;padding:18px 0;border-bottom:1px solid var(--filet)}
+  .cos .logo img{max-height:36px;max-width:150px;display:block}
+  .cos .logo .txt{font-weight:900;text-transform:uppercase;font-size:22px}
+  .cos .v{font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--encre)}
+  .cos .who{font-size:15px;font-weight:600}
+  .cos .since{font-size:13px;color:var(--gris);font-variant-numeric:tabular-nums}
+  .cos .wait{display:block;color:var(--gris);padding:18px 0}
+  .join{margin-top:clamp(36px,5vw,56px);background:var(--encre);color:var(--papier-clair);border:2px solid var(--noir);border-radius:22px;padding:clamp(22px,3vw,32px);display:flex;flex-wrap:wrap;gap:18px 28px;align-items:center;justify-content:space-between;box-shadow:8px 8px 0 var(--jaune)}
+  .join p{font-family:var(--serif);font-size:clamp(19px,2vw,22px);max-width:46ch}
+  .join strong{display:block;font-family:var(--sans);font-weight:900;text-transform:uppercase;font-size:clamp(20px,2.4vw,26px);margin-bottom:6px}
+
+  footer{background:var(--noir);color:var(--filet);font-size:13px;padding-block:28px}
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px 28px}
+  footer b{color:var(--papier-clair)}
+  footer .mail{user-select:all;color:var(--jaune)}
+
+  @media (max-width:820px){
+    .engage{grid-template-columns:minmax(0,1fr)}
+    .engage article,.engage article + article{padding:22px 0;border-left:0}
+    .engage article + article{border-top:1px solid var(--filet)}
+    .cos li{grid-template-columns:minmax(0,1fr);gap:6px}
+    .head .ast{display:none}
+  }
+  @media (prefers-reduced-motion:reduce){ .head .ast{animation:none} html{scroll-behavior:auto} }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="ast" viewBox="-111 -111 222 222"><rect x="-14" y="-110" width="28" height="220"/><rect x="-14" y="-110" width="28" height="220" transform="rotate(30)"/><rect x="-14" y="-110" width="28" height="220" transform="rotate(60)"/><rect x="-14" y="-110" width="28" height="220" transform="rotate(90)"/><rect x="-14" y="-110" width="28" height="220" transform="rotate(120)"/><rect x="-14" y="-110" width="28" height="220" transform="rotate(150)"/></symbol>
+</svg>
+
+<div class="draft">Brouillon · non public · le manifeste reste sous embargo jusqu'au 26 novembre au matin</div>
+
+<header class="bar">
+  <div class="wrap">
+    <a class="lock" href="./" aria-label="New Health, accueil"><svg aria-hidden="true"><use href="#ast"/></svg><span class="lw">New Health</span></a>
+    <a class="back" href="./">Retour au site</a>
+  </div>
+</header>
+
+<div class="head">
+  <div class="wrap">
+    <p class="kick">Le manifeste</p>
+    <h1>Une nouvelle génération de start-up qui ne vous promet pas de vivre plus longtemps</h1>
+    <span class="bar-j" aria-hidden="true"></span>
+    <svg class="ast" aria-hidden="true"><use href="#ast"/></svg>
+  </div>
+</div>
+
+<section class="text">
+  <div class="wrap narrow">
+    <p class="lead">Nous sommes des start-up de santé digitales qui accompagnent dans la durée les troubles du quotidien. Nous nous rassemblons pour que le monde sache que cette santé existe et lui donner toute sa place dans la santé de demain.</p>
+    <p class="q">Nous ne demandons pas « combien d'années encore ? ». Nous demandons « <span class="mark">comment allez-vous aujourd'hui ?</span> ».</p>
+    <p class="body">La santé se joue aujourd'hui à deux extrêmes. D'un côté, une médecine qui attend qu'on soit vraiment malade pour s'en occuper. De l'autre, la longévité, qui promet de gagner des années à celles et ceux qui vont déjà bien et veulent se dépasser.</p>
+    <p class="body">Entre les deux, il y a des dizaines de millions de personnes dont personne ne s'occupe. Leur quotidien n'est plus ce qu'il était. Elles dorment mal. Elles prennent du poids sans comprendre pourquoi. Elles doivent composer avec les aléas de leur digestion, de leur peau, de leur fatigue, de leurs hormones, de leur humeur. Elles veulent simplement retrouver un confort dans leur quotidien. Or, pour elles, une prise en charge réelle, avec un suivi dans la durée, reste hors de portée.</p>
+    <p class="body">On leur a dit que ce n'était rien, que c'était l'âge, le stress, ou que c'était dans leur tête. On leur a conseillé de mieux manger, de bouger plus, de gérer leur stress. Elles ont essayé, et elles en sont au même point. Leur parcours est long, démoralisant, et se termine par une phrase qui referme la porte : « il faudra apprendre à vivre avec ». Nous refusons cette phrase.</p>
+    <p class="body">Si les réponses ont manqué jusqu'ici, c'est parce que ces troubles se glissent entre les spécialités, sous le seuil des examens, entre deux rendez-vous trop courts. Les relier et accompagner quelqu'un dans la durée exigeait des outils qui n'existaient pas encore.</p>
+    <p class="body">Ces outils existent désormais : la mesure à domicile, le suivi à distance, une littérature scientifique consultable en temps réel. Ce qui manquait, c'était la technologie au service d'un parcours pensé pour ces personnes. Elle est là.</p>
+    <p class="body">Alors une génération de start-up se lève, digitale par nature et spécialisée, chacune s'attaquant à des troubles spécifiques. Il y a eu le New Space, quand des entreprises privées se sont emparées d'un spatial que les États géraient seuls. Il y a eu la New Food, quand nous avons repensé ce que nous mettons dans nos assiettes. Voici la New Health.</p>
+    <div class="lineage" aria-hidden="true"><span>New Space</span><span>New Food</span><span class="now"><span class="mark">New Health</span></span></div>
+  </div>
+</section>
+
+<section class="eng">
+  <div class="wrap">
+    <p class="label">Nos engagements</p>
+    <h2>Et voici nos engagements.</h2>
+    <div class="engage">
+      <article><span class="n">1</span><h3>Prendre en compte votre individualité</h3><ul><li>Nous partons de votre corps, pas d'une moyenne.</li><li>Nous prenons le temps d'expliquer.</li><li>Nous allons chercher la science qui vous concerne.</li></ul></article>
+      <article><span class="n">2</span><h3>Vous accompagner dans la durée</h3><ul><li>Nous construisons un parcours, pas une liste de conseils.</li><li>Nous le révisons quand votre situation change.</li><li>Nous restons joignables tout du long.</li></ul></article>
+      <article><span class="n">3</span><h3>Rendre l'expertise accessible</h3><ul><li>Nous venons jusqu'à vous, où que vous viviez.</li><li>Nous ne vous faisons pas attendre des mois.</li><li>Nous faisons en sorte que ce soit tenable au quotidien.</li></ul></article>
+    </div>
+  </div>
+</section>
+
+<section class="close">
+  <div class="wrap narrow">
+    <p class="body">Nous ne prenons pas la place de votre médecin. Nous travaillons avec des médecins, et nous leur rendons la main dès que c'est à eux d'agir.</p>
+    <p class="body">Se sentir accompagné dans son parcours ne devrait pas être un privilège, ni réservé à ceux qui vont déjà bien, ni suspendu au jour où l'on tombe malade. Pour la première fois, ce niveau de suivi peut vous rejoindre chez vous, où que vous viviez, jusque dans les régions les plus isolées.</p>
+    <p class="body">New Health n'est pas une marque, c'est une direction commune. Nous ne promettons pas de miracle, ni de vous faire vivre plus longtemps. Nous promettons d'être là pour vous, de vous aider à trouver des solutions pour vivre mieux.</p>
+    <p class="refus">On vous a dit d'apprendre à vivre avec. <span class="mark">Nous refusons de nous y résigner.</span></p>
+    <p class="call">Aux entreprises qui construisent cette santé-là : rejoignez-nous.</p>
+  </div>
+</section>
+
+<section class="sign" id="cosignataires">
+  <div class="wrap">
+    <p class="label">Les cosignataires</p>
+    <h2>Elles ont signé.</h2>
+    <p class="intro">Chaque boîte de cette liste remplit les cinq critères du réseau et a accepté d'apparaître ici.</p>
+    <ul class="cos" id="cos"><li class="wait">Chargement de la liste…</li></ul>
+    <div class="join">
+      <div><strong>Votre boîte construit cette santé-là ?</strong><p>Le questionnaire d'entrée prend 5 minutes, une question par critère.</p></div>
+      <a class="btn yellow" href="./#rejoindre">Candidater</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span><b>New Health</b> · le réseau des start-up de la santé du quotidien</span>
+    <span>Contact : Nicholas Balon-Perin · <span class="mail">nicholas@symp.co</span></span>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var list = document.getElementById('cos');
+    function el(tag, cls, txt){ var e = document.createElement(tag); if(cls) e.className = cls; if(txt != null) e.textContent = txt; return e; }
+    var MOIS = ['janv.','févr.','mars','avr.','mai','juin','juil.','août','sept.','oct.','nov.','déc.'];
+    function since(d){ var m = /^(\d{4})-(\d{2})/.exec(d || ''); return m ? 'Depuis ' + MOIS[+m[2]-1] + ' ' + m[1] : ''; }
+    function render(data){
+      list.textContent = '';
+      (data.boites || []).forEach(function(b){
+        var li = el('li');
+        var logo = el('div', 'logo');
+        if (b.logo) {
+          var img = document.createElement('img'); img.src = b.logo; img.alt = b.nom;
+          img.onerror = function(){ logo.textContent = ''; logo.appendChild(el('span', 'txt', b.nom)); };
+          logo.appendChild(img);
+        } else { logo.appendChild(el('span', 'txt', b.nom)); }
+        li.appendChild(logo);
+        var mid = el('div');
+        mid.appendChild(el('div', 'v', b.verticale));
+        if (b.fondateurs) mid.appendChild(el('div', 'who', b.fondateurs));
+        li.appendChild(mid);
+        li.appendChild(el('span', 'since', since(b.depuis)));
+        list.appendChild(li);
+      });
+      if (!list.children.length) list.appendChild(el('li', 'wait', 'La liste sera publiée avec le manifeste.'));
+    }
+    fetch('membres.json', {cache: 'no-store'})
+      .then(function(r){ if(!r.ok) throw new Error(r.status); return r.json(); })
+      .then(render)
+      .catch(function(){ list.textContent = ''; list.appendChild(el('li', 'wait', "La liste n'a pas pu se charger. Rechargez la page.")); });
+  })();
+</script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+{
+  "mis_a_jour": "2026-11-23",
+  "boites": [
+    {
+      "nom": "Symp",
+      "verticale": "Digestion · axe intestin-cerveau",
+      "phrase": "Analyses à domicile et accompagnement dans la durée pour celles et ceux dont la digestion pèse sur le quotidien. À l'initiative du mouvement.",
+      "fondateurs": "Nicholas Balon-Perin",
+      "logo": "logos/logo-symp.png",
+      "site": "https://symp.co",
+      "depuis": "2026-11"
+    },
+    {
+      "nom": "Kor",
+      "verticale": "Prévention · biomarqueurs",
+      "phrase": "La prévention qui part des marqueurs de chacun, pour agir avant qu'un problème s'installe.",
+      "fondateurs": "Sophie Agosta · Khadija Benmansour · Samuel Roze",
+      "logo": "logos/logo-kor.png",
+      "site": "",
+      "depuis": "2026-11"
+    },
+    {
+      "nom": "Annette",
+      "verticale": "Poids · métabolisme",
+      "phrase": "Un suivi du poids et du métabolisme dans la durée, où que l'on vive.",
+      "fondateurs": "Gwen Le Calvez · François-Xavier Trancart",
+      "logo": "logos/logo-annette.png",
+      "site": "",
+      "depuis": "2026-11"
+    },
+    {
+      "nom": "MenoClinic",
+      "verticale": "Ménopause",
+      "phrase": "Un parcours pensé pour les femmes en périménopause et ménopause, où qu'elles vivent.",
+      "fondateurs": "Maud Pasturaud",
+      "logo": "logos/logo-menoclinic.png",
+      "site": "",
+      "depuis": "2026-11"
+    }
+  ],
+  "partenaires": [
+    { "nom": "Hexa", "role": "hôte du lancement à Paris" },
+    { "nom": "Longevity Culture Club", "role": "talk du 25.11" }
+  ]
+}
