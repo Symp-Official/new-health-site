@@ -3,8 +3,8 @@
   "boites": [
     {
       "nom": "Symp",
-      "verticale": "Digestion · axe intestin-cerveau",
-      "phrase": "Analyses à domicile et accompagnement dans la durée pour celles et ceux dont la digestion pèse sur le quotidien. À l'initiative du mouvement.",
+      "verticale": "Digestion · gut-brain axis",
+      "phrase": "At-home testing and long-term support for people whose digestion weighs on their everyday life. The company that started the movement.",
       "fondateurs": "Nicholas Balon-Perin",
       "logo": "logos/logo-symp.png",
       "site": "https://symp.co",
@@ -12,8 +12,8 @@
     },
     {
       "nom": "Kor",
-      "verticale": "Prévention · biomarqueurs",
-      "phrase": "La prévention qui part des marqueurs de chacun, pour agir avant qu'un problème s'installe.",
+      "verticale": "Prevention · biomarkers",
+      "phrase": "Prevention that starts from each person's own markers, to act before a problem settles in.",
       "fondateurs": "Sophie Agosta · Khadija Benmansour · Samuel Roze",
       "logo": "logos/logo-kor.png",
       "site": "",
@@ -21,8 +21,8 @@
     },
     {
       "nom": "Annette",
-      "verticale": "Poids · métabolisme",
-      "phrase": "Un suivi du poids et du métabolisme dans la durée, où que l'on vive.",
+      "verticale": "Weight · metabolism",
+      "phrase": "Long-term weight and metabolism support, wherever you live.",
       "fondateurs": "Gwen Le Calvez · François-Xavier Trancart",
       "logo": "logos/logo-annette.png",
       "site": "",
@@ -30,8 +30,8 @@
     },
     {
       "nom": "MenoClinic",
-      "verticale": "Ménopause",
-      "phrase": "Un parcours pensé pour les femmes en périménopause et ménopause, où qu'elles vivent.",
+      "verticale": "Menopause",
+      "phrase": "A pathway designed for women in perimenopause and menopause, wherever they live.",
       "fondateurs": "Maud Pasturaud",
       "logo": "logos/logo-menoclinic.png",
       "site": "",
@@ -39,7 +39,13 @@
     }
   ],
   "partenaires": [
-    { "nom": "Hexa", "role": "hôte du lancement à Paris" },
-    { "nom": "Longevity Culture Club", "role": "talk du 25.11" }
+    {
+      "nom": "Hexa",
+      "role": "host of the Paris launch"
+    },
+    {
+      "nom": "Longevity Culture Club",
+      "role": "talk on 25.11"
+    }
   ]
 }

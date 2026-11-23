@@ -1,6 +1,6 @@
 <title>New Health</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="New Health, le réseau des start-up santé qui s'occupent du quotidien : le mouvement, le manifeste, les rendez-vous et les boîtes.">
+<meta name="description" content="New Health, the network of startups taking care of everyday health: the movement, the manifesto, the events and the companies.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,700..900&family=Libre+Franklin:ital,wght@0,300..900;1,400..700&family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400&display=swap" rel="stylesheet">
@@ -69,8 +69,8 @@
   .hero .cta{display:flex;flex-wrap:wrap;gap:12px}
   .hero .btn.ghost{color:var(--papier-clair);border-color:var(--papier-clair)}
   .hero .btn.ghost:hover{background:var(--papier-clair);color:var(--encre)}
-  .dates{margin-top:30px;border-top:2px solid rgba(243,243,246,.5)}
-  .dates div{display:grid;grid-template-columns:auto 1fr;gap:2px 16px;padding:12px 0;border-bottom:1px solid rgba(243,243,246,.25);align-items:baseline}
+  .dates{margin-top:30px;border-top:2px solid rgba(243,243,246,.5);display:grid;grid-template-columns:auto 1fr}
+  .dates div{grid-column:1/-1;display:grid;grid-template-columns:subgrid;gap:2px 16px;padding:12px 0;border-bottom:1px solid rgba(243,243,246,.25);align-items:baseline}
   .dates b{font-weight:900;font-size:26px;line-height:1;font-variant-numeric:tabular-nums;color:var(--jaune)}
   .dates span{font-weight:700;font-size:14px;letter-spacing:.06em;text-transform:uppercase}
   .dates small{grid-column:2;color:rgba(243,243,246,.7);font-size:14px}
@@ -154,8 +154,11 @@
   .ev .pic.poster .n{font-weight:900;text-transform:uppercase;font-size:52px;line-height:.88;letter-spacing:-.02em;border-bottom:7px solid #0F3BFF;padding-bottom:6px}
   .ev .pic.poster svg{position:absolute;top:16px;right:16px;width:54px;height:54px;fill:#0F3BFF}
   .ev .pic.poster .cap{font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;margin-top:6px}
-  .ev .pic.garage{border-left:2px solid var(--noir)}
-  .ev .pic.garage::after{content:"";position:absolute;left:0;right:0;bottom:0;height:16px;background:repeating-linear-gradient(-45deg,var(--encre) 0 12px,var(--papier) 12px 24px)}
+  .ev .pic.wip{border-left:2px solid var(--noir);background:var(--encre);color:var(--papier-clair);display:flex;flex-direction:column;justify-content:center;gap:10px;padding:26px;overflow:hidden}
+  .ev .pic.wip .n{font-family:var(--cond);font-stretch:68%;font-weight:900;text-transform:uppercase;font-size:46px;line-height:.9;letter-spacing:-.01em}
+  .ev .pic.wip ul{list-style:none;display:grid;gap:6px;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+  .ev .pic.wip li::before{content:"";display:inline-block;width:9px;height:9px;border:2px solid var(--papier-clair);border-radius:50%;margin-right:9px;vertical-align:0}
+  .ev .pic.wip li.ok::before{background:var(--jaune);border-color:var(--jaune)}
   .ev.open{background:transparent;border-style:dashed;border-color:var(--gris);grid-template-columns:200px minmax(0,1fr)}
   .ev.open .date{background:transparent;color:var(--gris);border-right:2px dashed var(--gris)}
 
@@ -238,7 +241,7 @@
     .ev.open .date{border-right:0;border-bottom:2px dashed var(--gris)}
     .ev .pic{order:-1;min-height:190px}
     .ev .pic.poster{display:none}
-    .ev .pic.garage{border-left:0;border-bottom:2px solid var(--noir)}
+    .ev .pic.wip{border-left:0;border-bottom:2px solid var(--noir)}
   }
   @media (max-width:720px){
     .engage{grid-template-columns:minmax(0,1fr)}
@@ -264,28 +267,28 @@
   <symbol id="ast" viewBox="-111 -111 222 222"><rect x="-14" y="-110" width="28" height="220"/><rect x="-14" y="-110" width="28" height="220" transform="rotate(30)"/><rect x="-14" y="-110" width="28" height="220" transform="rotate(60)"/><rect x="-14" y="-110" width="28" height="220" transform="rotate(90)"/><rect x="-14" y="-110" width="28" height="220" transform="rotate(120)"/><rect x="-14" y="-110" width="28" height="220" transform="rotate(150)"/></symbol>
 </svg>
 
-<div class="draft">Brouillon · non public · le manifeste reste sous embargo jusqu'au 26 novembre au matin</div>
+<div class="draft">Draft · not public · the manifesto is under embargo until the morning of 26 November</div>
 
 <header class="bar">
   <div class="wrap">
-    <a class="lock" href="#top" aria-label="New Health, haut de page"><svg aria-hidden="true"><use href="#ast"/></svg><span class="lw">New Health</span></a>
+    <a class="lock" href="#top" aria-label="New Health, back to top"><svg aria-hidden="true"><use href="#ast"/></svg><span class="lw">New Health</span></a>
     <nav aria-label="Sections">
-      <a href="#mouvement">Le mouvement</a>
-      <a href="#pourquoi">Pourquoi</a>
-      <a href="#manifeste">Manifeste</a>
-      <a href="#rendez-vous">Rendez-vous</a>
-      <a href="#boites">Les boîtes</a>
-      <a href="#criteres">Critères</a>
-      <a href="#ecosysteme">Écosystème</a>
+      <a href="#mouvement">The movement</a>
+      <a href="#pourquoi">Why join</a>
+      <a href="#manifeste">Manifesto</a>
+      <a href="#rendez-vous">Events</a>
+      <a href="#boites">Companies</a>
+      <a href="#criteres">Criteria</a>
+      <a href="#ecosysteme">Ecosystem</a>
     </nav>
-    <a class="btn sm" href="#rejoindre">Rejoindre</a>
+    <a class="btn sm" href="#rejoindre">Join</a>
   </div>
 </header>
 
 <div class="hero" id="top">
   <div class="wrap">
     <div class="mast">
-      <p class="kick">Le réseau</p>
+      <p class="kick">The network</p>
       <div class="wm">
         <h1 class="nh">New<br>Health</h1>
         <span class="bar-j" aria-hidden="true"></span>
@@ -294,18 +297,18 @@
     </div>
     <div class="hero-sub">
       <div>
-        <p class="sig">« La santé du quotidien,<br>enfin prise au sérieux. »</p>
-        <p class="lede">New Health rassemble les fondateurs de start-up qui accompagnent dans la durée les troubles du quotidien : sommeil, digestion, peau, hormones, énergie, humeur. Chacune sur un sujet précis, toutes dans la même direction.</p>
+        <p class="sig">“Everyday health,<br>finally taken seriously.”</p>
+        <p class="lede">New Health brings together the founders of startups that support people over time with everyday health issues: sleep, digestion, skin, hormones, energy, mood. Each works on a specific issue, and all of them are heading in the same direction.</p>
         <div class="cta">
-          <a class="btn yellow" href="#rejoindre">Rejoindre le réseau</a>
-          <a class="btn ghost" href="#rendez-vous">Les prochains rendez-vous</a>
+          <a class="btn yellow" href="#rejoindre">Join the network</a>
+          <a class="btn ghost" href="#rendez-vous">Upcoming events</a>
         </div>
       </div>
       <div>
-        <p class="eyebrow">Un réseau de start-up santé · lancé à Paris le 25.11.2026</p>
-        <div class="dates" aria-label="Rendez-vous">
-          <div><b>25.11</b><span>Paris · Hexa</span><small>Soirée de lancement · complet</small></div>
-          <div><b>Q1 2027</b><span>Bruxelles · The Garage</span><small>En préparation · date à venir</small></div>
+        <p class="eyebrow">A network of health startups · launched in Paris on 25.11.2026</p>
+        <div class="dates" aria-label="Events">
+          <div><b>25.11</b><span>Paris · Hexa</span><small>Launch evening · full</small></div>
+          <div><b>Q1 2027</b><span>Brussels · A full day</span><small>In preparation · date to come</small></div>
         </div>
       </div>
     </div>
@@ -313,30 +316,32 @@
 </div>
 
 <div class="ticker" aria-hidden="true"><div>
-  <span>Sommeil</span><span class="dot">●</span><span>Digestion</span><span class="dot">●</span><span>Peau</span><span class="dot">●</span><span>Hormones</span><span class="dot">●</span><span>Énergie</span><span class="dot">●</span><span>Humeur</span><span class="dot">●</span><span>Poids</span><span class="dot">●</span><span>New Space</span><span class="dot">●</span><span>New Food</span><span class="dot">●</span><span>New Health</span><span class="dot">●</span>
-  <span>Sommeil</span><span class="dot">●</span><span>Digestion</span><span class="dot">●</span><span>Peau</span><span class="dot">●</span><span>Hormones</span><span class="dot">●</span><span>Énergie</span><span class="dot">●</span><span>Humeur</span><span class="dot">●</span><span>Poids</span><span class="dot">●</span><span>New Space</span><span class="dot">●</span><span>New Food</span><span class="dot">●</span><span>New Health</span><span class="dot">●</span>
+  <span>Sleep</span><span class="dot">●</span><span>Digestion</span><span class="dot">●</span><span>Skin</span><span class="dot">●</span><span>Hormones</span><span class="dot">●</span><span>Energy</span><span class="dot">●</span><span>Mood</span><span class="dot">●</span><span>Weight</span><span class="dot">●</span>
+  <span>Sleep</span><span class="dot">●</span><span>Digestion</span><span class="dot">●</span><span>Skin</span><span class="dot">●</span><span>Hormones</span><span class="dot">●</span><span>Energy</span><span class="dot">●</span><span>Mood</span><span class="dot">●</span><span>Weight</span><span class="dot">●</span>
+  <span>Sleep</span><span class="dot">●</span><span>Digestion</span><span class="dot">●</span><span>Skin</span><span class="dot">●</span><span>Hormones</span><span class="dot">●</span><span>Energy</span><span class="dot">●</span><span>Mood</span><span class="dot">●</span><span>Weight</span><span class="dot">●</span>
+  <span>Sleep</span><span class="dot">●</span><span>Digestion</span><span class="dot">●</span><span>Skin</span><span class="dot">●</span><span>Hormones</span><span class="dot">●</span><span>Energy</span><span class="dot">●</span><span>Mood</span><span class="dot">●</span><span>Weight</span><span class="dot">●</span>
 </div></div>
 
 <section id="mouvement">
   <div class="wrap">
-    <p class="label">Le mouvement</p>
+    <p class="label">The movement</p>
     <div class="move">
       <div>
-        <div class="lineage cond" aria-label="Il y a eu le New Space, puis la New Food. Voici la New Health.">
+        <div class="lineage cond" aria-label="First came New Space, then New Food. Now comes New Health.">
           <span>New Space</span><span>New Food</span><span class="now"><span class="mark">New Health</span><svg aria-hidden="true"><use href="#ast"/></svg></span>
         </div>
-        <p class="intro">La santé se joue aujourd'hui à deux extrêmes. D'un côté, une médecine qui attend qu'on soit vraiment malade pour s'en occuper. De l'autre, la longévité, qui promet des années de plus à celles et ceux qui vont déjà bien.</p>
-        <p class="intro">Entre les deux, des dizaines de millions de personnes dorment mal, composent avec leur digestion, leur peau, leur fatigue ou leurs hormones, et s'entendent dire d'apprendre à vivre avec. Une génération de start-up, digitale et spécialisée, s'occupe d'elles. New Health, c'est le nom qu'elles se donnent ensemble.</p>
+        <p class="intro">Today, health is caught between two extremes. On one side, medicine that waits until you are really ill before it steps in. On the other, longevity, which promises extra years to people who are already well.</p>
+        <p class="intro">In between, tens of millions of people sleep badly, put up with their digestion, their skin, their fatigue or their hormones, and are told to learn to live with it. A generation of digital, specialised startups is taking care of them. New Health is the name they give themselves together.</p>
       </div>
       <div class="sheet">
-        <p class="bk">Ce que c'est</p>
+        <p class="bk">What it is</p>
         <ul>
-          <li><b>OUI</b>Un réseau de fondateurs qui partagent le manifeste</li>
-          <li><b>OUI</b>Un groupe WhatsApp où l'on s'entraide sur les défis communs</li>
-          <li><b>OUI</b>Des rendez-vous toute l'année, animés par les membres</li>
-          <li><b>NON</b><span class="x">Un label ou une certification</span></li>
-          <li><b>NON</b><span class="x">Un engagement formel</span></li>
-          <li><b>NON</b><span class="x">Une promesse de vivre plus longtemps</span></li>
+          <li><b>YES</b>A network of founders who share the manifesto</li>
+          <li><b>YES</b>A WhatsApp group where we help each other with shared challenges</li>
+          <li><b>YES</b>Events all year round, run by members</li>
+          <li><b>NO</b><span class="x">A label or a certification</span></li>
+          <li><b>NO</b><span class="x">A formal commitment</span></li>
+          <li><b>NO</b><span class="x">A promise to live longer</span></li>
         </ul>
       </div>
     </div>
@@ -345,29 +350,29 @@
 
 <section id="pourquoi" class="why">
   <div class="wrap">
-    <p class="label">Pourquoi en faire partie</p>
-    <h2 class="cond">Seul, on construit une boîte. Ensemble, une catégorie.</h2>
-    <p class="intro">Monter une start-up sur ces sujets pose des questions que le reste de la tech ne se pose pas : comment parler de santé sans promettre, comment s'appuyer sur la science et travailler avec les médecins, comment gagner la confiance de personnes qui cherchent des réponses depuis des années. Chacun y faisait face de son côté.</p>
+    <p class="label">Why join</p>
+    <h2 class="cond">Alone, you build a company. Together, a category.</h2>
+    <p class="intro">Building a startup in this space raises questions the rest of tech never has to answer: how to talk about health without overpromising, how to rely on science and work with doctors, how to earn the trust of people who have been looking for answers for years. Until now, every founder faced them alone.</p>
     <div class="vals">
       <article>
         <span class="k">01</span>
-        <h3>Des pairs qui ont les mêmes problèmes</h3>
-        <p>Un groupe de fondateurs où l'on pose la question qu'on ne peut pas poser ailleurs : un prestataire réglementaire, un médecin conseil, une formulation qui passe, un recrutement. La réponse vient de quelqu'un qui l'a vécu.</p>
+        <h3>Peers with the same problems</h3>
+        <p>A group of founders where you can ask the questions you can't ask anywhere else: a regulatory provider, a medical advisor, wording that holds up, a hire. The answer comes from someone who has been through it.</p>
       </article>
       <article>
         <span class="k">02</span>
-        <h3>Une visibilité qu'on n'a pas seul</h3>
-        <p>Une scène à chaque rendez-vous, une prise de parole commune quand une boîte du réseau lance quelque chose, et des posts relayés par toutes les boîtes du réseau. Paris a réuni plus de 350 inscrits pour une soirée.</p>
+        <h3>Visibility you can't get alone</h3>
+        <p>A stage at every event, a joint voice when a company in the network launches something, and posts shared by every company in the network. Paris drew more than 350 sign-ups for a single evening.</p>
       </article>
       <article>
         <span class="k">03</span>
-        <h3>Les investisseurs et la presse des autres</h3>
-        <p>Chaque boîte invite son tour de table, ses partenaires et ses journalistes. Les rendez-vous mettent dans une même salle des gens que chacun aurait mis des mois à rencontrer.</p>
+        <h3>Each other's investors and press</h3>
+        <p>Every company brings its investors, partners and journalists. The events put people in the same room who would otherwise have taken each of us months to meet.</p>
       </article>
       <article>
         <span class="k">04</span>
-        <h3>Un nom que tout le monde comprend</h3>
-        <p>Le New Space et la New Food ont donné un mot aux investisseurs, aux médias et au public. New Health fait la même chose pour la santé du quotidien : on n'explique plus seul d'où l'on vient.</p>
+        <h3>A name everyone understands</h3>
+        <p>New Space and New Food gave investors, the media and the public a word for what was happening. New Health does the same for everyday health: no one has to explain where they come from on their own anymore.</p>
       </article>
     </div>
   </div>
@@ -375,50 +380,50 @@
 
 <section id="manifeste" class="mani">
   <div class="wrap">
-    <p class="label">Le manifeste</p>
-    <p class="quote cond">Nous ne demandons pas « combien d'années encore ? ». Nous demandons <em>« comment allez-vous aujourd'hui ? »</em></p>
+    <p class="label">The manifesto</p>
+    <p class="quote cond">We don't ask “how many more years?” We ask <em>“how are you today?”</em></p>
     <div class="engage">
       <article>
         <span class="n">1</span>
-        <h3>Prendre en compte votre individualité</h3>
-        <ul><li>Nous partons de votre corps, pas d'une moyenne.</li><li>Nous prenons le temps d'expliquer.</li><li>Nous allons chercher la science qui vous concerne.</li></ul>
+        <h3>Seeing you as an individual</h3>
+        <ul><li>We start from your body, not from an average.</li><li>We take the time to explain.</li><li>We look for the science that applies to you.</li></ul>
       </article>
       <article>
         <span class="n">2</span>
-        <h3>Vous accompagner dans la durée</h3>
-        <ul><li>Nous construisons un parcours, pas une liste de conseils.</li><li>Nous le révisons quand votre situation change.</li><li>Nous restons joignables tout du long.</li></ul>
+        <h3>Supporting you over time</h3>
+        <ul><li>We build a pathway, not a list of tips.</li><li>We revise it when your situation changes.</li><li>We stay reachable all the way through.</li></ul>
       </article>
       <article>
         <span class="n">3</span>
-        <h3>Rendre l'expertise accessible</h3>
-        <ul><li>Nous venons jusqu'à vous, où que vous viviez.</li><li>Nous ne vous faisons pas attendre des mois.</li><li>Nous faisons en sorte que ce soit tenable au quotidien.</li></ul>
+        <h3>Making expertise accessible</h3>
+        <ul><li>We come to you, wherever you live.</li><li>We don't make you wait for months.</li><li>We make sure it fits into everyday life.</li></ul>
       </article>
     </div>
     <div class="refus">
       <div>
-        <p class="big">On vous a dit d'apprendre à vivre avec. Nous refusons de nous y résigner.</p>
-        <p class="doc">Nous ne prenons pas la place de votre médecin. Nous travaillons avec des médecins, et nous leur rendons la main dès que c'est à eux d'agir.</p>
+        <p class="big">You were told to learn to live with it. We refuse to accept that.</p>
+        <p class="doc">We do not take your doctor's place. We work with doctors, and we hand things back to them as soon as it is their turn to act.</p>
       </div>
-      <a class="btn" href="manifeste.html">Lire le manifeste en entier</a>
+      <a class="btn" href="manifeste.html">Read the full manifesto</a>
     </div>
   </div>
 </section>
 
 <section id="rendez-vous">
   <div class="wrap">
-    <p class="label">Les rendez-vous</p>
-    <h2 class="cond">Toute l'année, animés par les membres.</h2>
-    <p class="intro">Chaque membre peut organiser un rendez-vous, dans sa ville, avec son format. Les grandes éditions comme Paris ou Bruxelles ouvrent le réseau à tout l'écosystème ; entre elles, les rendez-vous des membres le font vivre.</p>
+    <p class="label">Events</p>
+    <h2 class="cond">All year round, run by members.</h2>
+    <p class="intro">Any member can host an event, in their own city and in their own format. Flagship editions like Paris or Brussels open the network to the whole ecosystem; in between, events run by members keep it alive.</p>
     <div class="formats">
-      <article><span class="bk">Grande édition</span><h3>Soirée ou journée ouverte</h3><p>Une scène, 4 à 5 boîtes mises en avant, investisseurs, médecins et presse dans la salle. Un hôte différent à chaque fois.</p></article>
-      <article><span class="bk">Atelier</span><h3>Un sujet, deux heures</h3><p>Levée, réglementaire, marketing, recrutement : un membre partage ce qu'il a appris, les autres arrivent avec leurs questions.</p></article>
-      <article><span class="bk">Petit-déjeuner</span><h3>Fondateurs seulement</h3><p>Une table, une ville, les fondateurs du réseau qui y vivent. Ce qui se dit autour de la table y reste.</p></article>
-      <article><span class="bk">En ligne</span><h3>Retour d'expérience</h3><p>Trente minutes en visio : un membre raconte un lancement, une levée ou un échec, pour tous ceux qui ne sont pas dans la même ville.</p></article>
+      <article><span class="bk">Flagship edition</span><h3>An open evening or day</h3><p>One stage, 4 to 5 companies in the spotlight, investors, doctors and press in the room. A different host every time.</p></article>
+      <article><span class="bk">Workshop</span><h3>One topic, two hours</h3><p>Fundraising, regulation, marketing, hiring: one member shares what they have learned, and the others come with their questions.</p></article>
+      <article><span class="bk">Breakfast</span><h3>Founders only</h3><p>One table, one city, the network's founders who live there. What is said around the table stays there.</p></article>
+      <article><span class="bk">Online</span><h3>Lessons learned</h3><p>Thirty minutes on video: a member talks through a launch, a fundraise or a failure, for everyone who is not in the same city.</p></article>
     </div>
     <div class="rules">
-      <div><b>L'hôte choisit</b>Le membre qui organise fixe le format, le lieu et le thème.</div>
-      <div><b>Le réseau relaie</b>Chaque rendez-vous est annoncé ici et relayé par toutes les boîtes.</div>
-      <div><b>Ouvert aux membres</b>Les ateliers et petits-déjeuners sont réservés aux boîtes du réseau.</div>
+      <div><b>The host decides</b>The member who organises sets the format, the venue and the theme.</div>
+      <div><b>The network spreads the word</b>Every event is announced here and shared by every company.</div>
+      <div><b>Members only</b>Workshops and breakfasts are reserved for companies in the network.</div>
     </div>
 
     <div class="events">
@@ -428,47 +433,46 @@
           <div class="city">Paris · Hexa</div>
         </div>
         <div class="body">
-          <div class="kick"><span class="chip full" data-status>Complet</span><span class="chip">Soirée de lancement</span></div>
-          <h3>Le lancement de New Health</h3>
-          <p>Le manifeste présenté pour la première fois en public par Nicholas Balon-Perin (Symp), puis un talk mené par Charlotte Calvet Granet (Longevity Culture Club) avec Sophie Agosta (Kor), Gwen Le Calvez (Annette) et Maud Pasturaud (MenoClinic). Cocktail ensuite.</p>
-          <ul class="facts"><li>Mercredi · 18h30</li><li>12 rue Martel, Paris 10e</li><li>Hôte : Symp, chez Hexa</li></ul>
-          <div class="act"><a class="btn" href="https://luma.com/hexa-llu2" target="_blank" rel="noopener">Rejoindre la liste d'attente</a><small>Les places libérées sont proposées sur Luma</small></div>
+          <div class="kick"><span class="chip full" data-status>Full</span><span class="chip">Launch evening</span></div>
+          <h3>The launch of New Health</h3>
+          <p>The manifesto presented in public for the first time by Nicholas Balon-Perin (Symp), followed by a talk led by Charlotte Calvet Granet (Longevity Culture Club) with Sophie Agosta (Kor), Gwen Le Calvez (Annette) and Maud Pasturaud (MenoClinic). Drinks afterwards.</p>
+          <ul class="facts"><li>Wednesday · 6:30 pm</li><li>12 rue Martel, Paris 10e</li><li>Host: Symp, at Hexa</li></ul>
+          <div class="act"><a class="btn" href="https://luma.com/hexa-llu2" target="_blank" rel="noopener">Join the waitlist</a><small>Freed-up spots are offered on Luma</small></div>
         </div>
         <div class="pic poster" aria-hidden="true">
           <svg><use href="#ast"/></svg>
-          <span class="s">SOIRÉE</span>
+          <span class="s">EVENING</span>
           <span class="n">New<br>Health</span>
-          <span class="cap">L'affiche de la soirée</span>
+          <span class="cap">The evening's poster</span>
         </div>
       </article>
 
       <article class="ev">
         <div class="date">
           <div class="d">Q1<small>2027</small></div>
-          <div class="city">Bruxelles</div>
+          <div class="city">Brussels</div>
         </div>
         <div class="body">
-          <div class="kick"><span class="chip soon">En préparation</span><span class="chip">Une journée</span></div>
-          <h3>New Health · The Garage</h3>
-          <p>Une journée gratuite pour celles et ceux qui construisent la santé en Europe : fondateurs, investisseurs, médecins. Une seule scène, des créneaux longs, et entre les talks des ateliers en petits groupes à la place des stands. Dans un garage ouvert pour six mois seulement.</p>
-          <ul class="facts"><li>08h30 jusqu'au soir</li><li>300 places, validées une par une</li><li>Gratuit</li></ul>
-          <div class="act"><a class="btn" href="https://claude.ai/artifact/7ce9HTz3MZDtexNdvc9J8Z" target="_blank" rel="noopener">Voir la page The Garage</a><small>Programme en cours · page en anglais</small></div>
+          <div class="kick"><span class="chip soon">In preparation</span><span class="chip">One day</span></div>
+          <h3>New Health · Brussels</h3>
+          <p>A free day for the people building health in Europe: founders, investors, doctors. One stage, long slots, and between the talks, small-group workshops instead of booths.</p>
+          <ul class="facts"><li>Free</li><li>Spots approved one by one</li></ul>
+          <div class="act"><a class="btn" href="https://symp.notion.site/421b373d57dc81a1a3d1f05caf6992c9" target="_blank" rel="noopener">Join the waitlist</a><small>One minute · you'll be the first to know</small></div>
         </div>
-        <div class="pic garage">
-          <img src="images/garage-facade-carrefour.jpg" alt="Le garage rond et vitré de Bruxelles, une bâche New Health en vitrine" loading="lazy">
+        <div class="pic wip" aria-hidden="true">
+          <span class="n">In<br>preparation</span>
         </div>
       </article>
 
       <article class="ev open">
         <div class="date">
-          <div class="d">Votre<small>rendez-vous</small></div>
-          <div class="city">Votre ville ?</div>
+          <div class="d">Your<small>event</small></div>
+          <div class="city">Your city?</div>
         </div>
         <div class="body">
-          <div class="kick"><span class="chip">Hôte recherché</span></div>
-          <h3>Le prochain, c'est vous qui l'animez</h3>
-          <p>Vous êtes membre et vous voulez monter un atelier, un petit-déjeuner ou la prochaine grande édition ? Dites-le-nous : on vous aide à l'organiser, il est annoncé ici et le réseau fait venir la salle.</p>
-          <div class="act"><a class="btn ghost" href="mailto:nicholas@symp.co?subject=New%20Health%20%C2%B7%20proposer%20un%20rendez-vous">Proposer un rendez-vous</a><small>nicholas@symp.co</small></div>
+          <div class="kick"><span class="chip">Host wanted</span></div>
+          <h3>The next one is yours to host</h3>
+          <p>Are you a member who wants to run a workshop, a breakfast or the next flagship edition? Tell us: we'll help you organise it, it gets announced here, and the network fills the room.</p>
         </div>
       </article>
     </div>
@@ -477,11 +481,11 @@
 
 <section id="boites">
   <div class="wrap">
-    <p class="label">Les boîtes</p>
-    <h2 class="cond">Celles qui en font partie.</h2>
-    <p class="intro">La liste s'allonge à chaque candidature retenue.</p>
+    <p class="label">The companies</p>
+    <h2 class="cond">The ones already in.</h2>
+    <p class="intro">The list grows with every accepted application.</p>
     <div class="cos" id="cos" aria-live="polite">
-      <p class="wait">Chargement de la liste…</p>
+      <p class="wait">Loading the list…</p>
     </div>
     <div class="eco" id="eco"></div>
   </div>
@@ -489,15 +493,15 @@
 
 <section id="criteres">
   <div class="wrap">
-    <p class="label">Les critères d'entrée</p>
-    <h2 class="cond">Cinq critères pour cosigner.</h2>
-    <p class="intro">Une boîte peut cosigner le manifeste si elle remplit les cinq. Pas de cotisation, pas d'engagement formel.</p>
+    <p class="label">Entry criteria</p>
+    <h2 class="cond">Five criteria to co-sign.</h2>
+    <p class="intro">A company can co-sign the manifesto if it meets all five. No fee, no formal commitment.</p>
     <ol class="crit">
-      <li><div><h3>Elle s'occupe du quotidien</h3><p>Ses clients viennent pour un trouble qui les gêne aujourd'hui (digestion, sommeil, poids, hormones, peau, fatigue, humeur) et qui est mal pris en charge, ou pour éviter qu'un problème s'installe.</p></div></li>
-      <li><div><h3>Elle part de la personne et de la science</h3><p>Son parcours s'appuie sur les données de la personne (mesure, questionnaire, historique) et sur des études, pas sur une moyenne.</p></div></li>
-      <li><div><h3>Elle suit dans la durée</h3><p>Elle construit un parcours et l'ajuste quand la situation change.</p></div></li>
-      <li><div><h3>Elle est accessible partout</h3><p>On peut suivre tout le parcours où qu'on habite.</p></div></li>
-      <li><div><h3>Elle est construite et validée avec un médecin</h3><p>Un médecin a validé le protocole sur lequel repose le produit.</p></div></li>
+      <li><div><h3>It deals with everyday health</h3><p>Its customers come for an issue that bothers them today (digestion, sleep, weight, hormones, skin, fatigue, mood) and is poorly addressed, or to keep a problem from settling in.</p></div></li>
+      <li><div><h3>It starts from the person and from science</h3><p>Its pathway relies on the person's own data (measurements, questionnaire, history) and on studies, not on an average.</p></div></li>
+      <li><div><h3>It follows people over time</h3><p>It builds a pathway and adjusts it when the situation changes.</p></div></li>
+      <li><div><h3>It is accessible everywhere</h3><p>The whole pathway can be followed wherever you live.</p></div></li>
+      <li><div><h3>It is built and validated with a doctor</h3><p>A doctor has validated the protocol the product is based on.</p></div></li>
     </ol>
   </div>
 </section>
@@ -506,25 +510,25 @@
   <div class="wrap">
     <div class="grid">
       <div>
-        <p class="label">Rejoindre</p>
-        <h2 class="cond">Aux entreprises qui construisent cette santé-là : rejoignez-nous.</h2>
-        <p class="intro">Si votre boîte remplit les cinq critères, elle cosigne le manifeste, rejoint le groupe des fondateurs et prend sa place parmi les boîtes du réseau.</p>
+        <p class="label">Join</p>
+        <h2 class="cond">To the companies building this kind of health: join us.</h2>
+        <p class="intro">If your company meets the five criteria, it co-signs the manifesto, joins the founders' group and takes its place among the companies in the network.</p>
       </div>
       <div class="form-card">
-        <span class="bk">Candidature</span>
-        <h3>Le questionnaire d'entrée</h3>
-        <p>Répondez en quelques phrases, avec des chiffres et des noms quand c'est possible.</p>
+        <span class="bk">Application</span>
+        <h3>The entry questionnaire</h3>
+        <p>Answer in a few sentences, with figures and names where you can.</p>
         <ol>
-          <li><b>00</b>Votre boîte, votre site, votre contact, vos sujets</li>
-          <li><b>01</b>Le trouble du quotidien dont vous vous occupez</li>
-          <li><b>02</b>Les données de la personne et la science derrière</li>
-          <li><b>03</b>Le suivi dans la durée</li>
-          <li><b>04</b>L'accès à distance, où que l'on habite</li>
-          <li><b>05</b>Le médecin qui a validé votre protocole</li>
-          <li><b>06</b>Votre accord pour apparaître comme cosignataire</li>
+          <li><b>00</b>Your company, website, contact and topics</li>
+          <li><b>01</b>The everyday issue you work on</li>
+          <li><b>02</b>The person's data and the science behind it</li>
+          <li><b>03</b>Follow-up over time</li>
+          <li><b>04</b>Remote access, wherever people live</li>
+          <li><b>05</b>The doctor who validated your protocol</li>
+          <li><b>06</b>Your consent to appear as a co-signatory</li>
         </ol>
-        <a class="btn" href="https://symp.notion.site/a672978dd7204e11875d2b76c2d966e3?pvs=105" target="_blank" rel="noopener">Ouvrir le questionnaire</a>
-        <p class="meta">S'ouvre dans un nouvel onglet · 5 minutes</p>
+        <a class="btn" href="https://symp.notion.site/a672978dd7204e11875d2b76c2d966e3?pvs=105" target="_blank" rel="noopener">Open the questionnaire</a>
+        <p class="meta">Opens in a new tab · 5 minutes</p>
       </div>
     </div>
   </div>
@@ -532,22 +536,22 @@
 
 <section id="ecosysteme" class="ecos">
   <div class="wrap">
-    <p class="label">L'écosystème</p>
-    <h2 class="cond">Pas une start-up&nbsp;? Il y a aussi une place pour vous.</h2>
-    <p class="intro">Investisseurs, médecins, marques, médias, lieux : New Health se construit aussi avec celles et ceux qui gravitent autour des boîtes du réseau. Dites-nous ce qui vous donne envie, on revient vers vous.</p>
+    <p class="label">The ecosystem</p>
+    <h2 class="cond">Not a startup? There's a place for you too.</h2>
+    <p class="intro">Investors, doctors, brands, media, venues: New Health is also built with the people around the network's companies. Tell us what appeals to you and we'll get back to you.</p>
     <div class="eco-grid">
       <ol class="wants">
-        <li><b>01</b><div><strong>Sponsoriser un prochain rendez-vous</strong><span>Une grande édition, un atelier ou un petit-déjeuner, à votre nom.</span></div></li>
-        <li><b>02</b><div><strong>Offrir quelque chose aux membres</strong><span>Un service, un outil, un lieu ou une remise réservée aux boîtes du réseau.</span></div></li>
-        <li><b>03</b><div><strong>Animer un webinaire ou un atelier</strong><span>Pour tout le réseau, ou avec quelques boîtes sur un sujet précis.</span></div></li>
-        <li><b>04</b><div><strong>Être prioritaire aux prochains rendez-vous</strong><span>Les dates et les programmes avant l'annonce publique, et les premières places quand les inscriptions ouvrent.</span></div></li>
+        <li><b>01</b><div><strong>Sponsor an upcoming event</strong><span>A flagship edition, a workshop or a breakfast, under your name.</span></div></li>
+        <li><b>02</b><div><strong>Offer something to members</strong><span>A service, a tool, a venue or a discount reserved for the network's companies.</span></div></li>
+        <li><b>03</b><div><strong>Host a webinar or a workshop</strong><span>For the whole network, or with a few companies on a specific topic.</span></div></li>
+        <li><b>04</b><div><strong>Get priority for upcoming events</strong><span>Dates and programmes before the public announcement, and the first spots when registration opens.</span></div></li>
       </ol>
       <div class="eco-card">
-        <span class="bk">Écosystème</span>
-        <h3>Le formulaire de l'écosystème</h3>
-        <p>Qui vous êtes, votre structure, et ce que vous aimeriez faire avec le réseau. Plusieurs choix possibles.</p>
-        <a class="btn yellow" id="eco-form" href="mailto:nicholas@symp.co?subject=New%20Health%20%C2%B7%20%C3%A9cosyst%C3%A8me" target="_blank" rel="noopener">Ouvrir le formulaire</a>
-        <p class="meta">3 minutes · on répond à chaque message</p>
+        <span class="bk">Ecosystem</span>
+        <h3>The ecosystem form</h3>
+        <p>Who you are, your organisation, and what you would like to do with the network. You can pick several options.</p>
+        <a class="btn yellow" id="eco-form" href="https://symp.notion.site/421b373d57dc81138444f99cbdd74dc0" target="_blank" rel="noopener">Open the form</a>
+        <p class="meta">3 minutes · we answer every message</p>
       </div>
     </div>
   </div>
@@ -555,8 +559,8 @@
 
 <footer>
   <div class="wrap">
-    <span><b>New Health</b> · #NewHealth · Paris, Bruxelles, et la suite</span>
-    <span>Contact : Nicholas Balon-Perin · <span class="mail">nicholas@symp.co</span></span>
+    <span><b>New Health</b> · #NewHealth · Paris, Brussels, and what comes next</span>
+    <span>Contact: Nicholas Balon-Perin · <span class="mail">nicholas@symp.co</span></span>
   </div>
 </footer>
 
@@ -569,10 +573,10 @@
       var p = ev.getAttribute('data-date').split('-');
       var d = new Date(+p[0], +p[1]-1, +p[2]);
       var days = Math.round((d - today) / 86400000);
-      if(days < 0){ chip.textContent = 'Passé'; chip.className = 'chip past'; return; }
-      if(ev.hasAttribute('data-full')){ chip.textContent = days === 0 ? "Aujourd'hui · complet" : 'Complet · J-' + days; return; }
-      if(days === 0){ chip.textContent = "Aujourd'hui"; chip.className = 'chip live'; }
-      else if(days <= 14){ chip.textContent = 'J-' + days; chip.className = 'chip live'; }
+      if(days < 0){ chip.textContent = 'Past'; chip.className = 'chip past'; return; }
+      if(ev.hasAttribute('data-full')){ chip.textContent = days === 0 ? 'Today · full' : 'Full · D-' + days; return; }
+      if(days === 0){ chip.textContent = 'Today'; chip.className = 'chip live'; }
+      else if(days <= 14){ chip.textContent = 'D-' + days; chip.className = 'chip live'; }
     });
   })();
 
@@ -595,27 +599,23 @@
         cos.appendChild(a);
       });
       var slot = el('a', 'co slot'); slot.href = '#rejoindre';
-      slot.appendChild(el('span', 'v', 'Votre verticale'));
-      slot.appendChild(el('span', 'txt', 'Votre boîte ?'));
-      slot.appendChild(el('p', '', 'Si elle remplit les cinq critères, elle a sa place ici.'));
+      slot.appendChild(el('span', 'v', 'Your vertical'));
+      slot.appendChild(el('span', 'txt', 'Your company?'));
+      slot.appendChild(el('p', '', 'If it meets the five criteria, it belongs here.'));
       cos.appendChild(slot);
       eco.textContent = '';
-      if((data.partenaires || []).length){
-        eco.appendChild(el('span', 'bk', 'Avec'));
-        data.partenaires.forEach(function(p){ var s = el('span', 'p', p.nom); if(p.role){ s.appendChild(el('em', '', p.role)); } eco.appendChild(s); });
-      }
     }
     fetch('membres.json', {cache: 'no-store'})
       .then(function(r){ if(!r.ok) throw new Error(r.status); return r.json(); })
       .then(render)
-      .catch(function(){ cos.textContent = ''; cos.appendChild(el('p', 'wait', "La liste des boîtes n'a pas pu se charger. Rechargez la page.")); });
+      .catch(function(){ cos.textContent = ''; cos.appendChild(el('p', 'wait', "The list of companies could not load. Please reload the page.")); });
   })();
 </script>
 <script>
   /* Formulaire écosystème : coller ici le lien public de la vue formulaire Notion
      « Rejoindre l'écosystème » (base Écosystème New Health). Tant qu'il est vide, le bouton ouvre un e-mail. */
   (function(){
-    var ECO_FORM_URL = '';
+    var ECO_FORM_URL = 'https://symp.notion.site/421b373d57dc81138444f99cbdd74dc0';
     if (ECO_FORM_URL) { var a = document.getElementById('eco-form'); a.href = ECO_FORM_URL; }
   })();
 </script>
