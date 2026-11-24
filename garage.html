@@ -4,7 +4,7 @@
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="icon" type="image/png" href="icon.png">
 <link rel="apple-touch-icon" href="icon.png">
-<meta name="description" content="New Health Garage, Thursday 28 January 2027 in Brussels. A gathering for the people building Europe's health companies. Join the waitlist to be the first to know.">
+<meta name="description" content="New Health Garage, Thursday 28 January 2027 at WAT Garage, Brussels. One free day for the people building Europe's health companies, built in public. Join the waitlist or help us build it.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,300..900;1,400..700&family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400&display=swap" rel="stylesheet">
@@ -136,7 +136,7 @@
   .shot .wip{position:absolute;left:-12px;right:-12px;top:16px;height:22px;background:var(--stripes);transform:rotate(-3deg);border-block:2px solid var(--noir)}
   .facts{list-style:none;margin-top:28px}
   .facts li{display:flex;gap:14px;padding:14px 0;border-top:1px solid var(--filet);font-weight:600}
-  .facts li b{color:var(--encre);font-size:12px;letter-spacing:.12em;min-width:68px;padding-top:3px;flex:none}
+  .facts li b{color:var(--encre);font-size:12px;letter-spacing:.12em;min-width:84px;padding-top:3px;flex:none}
   details{border-top:2px solid var(--noir);padding:22px 0}
   details:last-of-type{border-bottom:2px solid var(--noir)}
   summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:20px;font-weight:800;font-size:clamp(19px,2vw,24px);text-transform:uppercase}
@@ -175,16 +175,71 @@
     .card,.card:hover{transition:none;transform:none}
     html{scroll-behavior:auto}
   }
+
+  /* statuts des blocs : décidé / à décider / à venir */
+  .ticket li b{min-width:86px}
+  .ticket li.decide b,.ticket li.soon b{color:var(--noir);border:1.5px dashed var(--noir);border-radius:999px;padding:1px 6px;text-align:center;font-size:11px}
+  .ticket li.decide,.ticket li.soon{color:var(--gris);font-weight:500}
+  .ticket li.decide em,.ticket li.soon em{font-style:normal;color:var(--noir);font-weight:600}
+  .pill{display:inline-block;align-self:flex-start;font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;border-radius:999px;padding:3px 10px;border:1.5px solid currentColor;white-space:nowrap}
+  .pill.done{background:var(--encre);border-color:var(--encre);color:var(--papier-clair)}
+  .pill.soon,.pill.decide{border-style:dashed}
+  .floor .pill.done{background:var(--encre-clair);border-color:var(--encre-clair)}
+
+  /* la journée */
+  .day{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(24px,5vw,64px);align-items:start}
+  .times{list-style:none;border-top:2px solid var(--noir)}
+  .times li{display:grid;grid-template-columns:110px minmax(0,1fr) auto;gap:16px;align-items:baseline;padding:16px 0;border-bottom:1px solid var(--filet)}
+  .times time{font-weight:800;color:var(--encre);font-size:15px;letter-spacing:.04em}
+  .times b{display:block;font-weight:800;text-transform:uppercase;font-size:16px;line-height:1.2}
+  .times small{display:block;color:var(--gris);font-size:15px;margin-top:4px}
+  .times li.tbc time{color:var(--gris)}
+  .times li.tbc b{color:var(--gris)}
+  .bay .pill{margin-top:auto;color:var(--papier-clair)}
+  .shot.empty{display:grid;place-items:center;background:var(--papier-clair);border-style:dashed;border-color:var(--gris)}
+  .shot.empty span{font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--gris)}
+  .pair{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:18px;margin-top:18px}
+  @media (max-width:900px){
+    .day{grid-template-columns:minmax(0,1fr)}
+    .times li{grid-template-columns:76px minmax(0,1fr);}
+    .times li .pill{grid-column:2}
+  }
+
+  /* to-do list : chaque chantier ouvert, avec un bouton pour nous aider */
+  .todo{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:18px;margin-top:40px}
+  .task{border:2px solid var(--papier-clair);border-radius:22px;padding:22px 22px 24px;display:flex;flex-direction:column;gap:10px;min-width:0}
+  .task .top{display:flex;align-items:center;gap:12px}
+  .task .box{width:22px;height:22px;border:2px solid var(--papier-clair);border-radius:6px;flex:none}
+  .task .code{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--encre-clair)}
+  .task h3{font-size:22px;font-weight:800;text-transform:uppercase;line-height:1.1}
+  .task p{font-size:15px;color:var(--filet)}
+  .task a{margin-top:auto;align-self:flex-start;color:var(--papier-clair);font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:.08em;text-decoration:none;border-bottom:2px solid var(--encre-clair);padding-bottom:2px}
+  .task a:hover{color:var(--encre-clair)}
+  .task.other{border-style:dashed;border-color:var(--gris)}
+  .paris{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,5vw,64px);align-items:center}
+  .paris .big{font-weight:900;font-size:clamp(72px,11vw,150px);line-height:.85;letter-spacing:-.03em;color:var(--encre);text-transform:uppercase}
+  .paris .big small{display:block;font-size:.3em;letter-spacing:.04em;color:var(--noir);margin-top:.2em}
+  .stamp{display:inline-block;transform:rotate(-4deg);border:3px solid var(--encre);color:var(--encre);border-radius:12px;padding:6px 14px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;font-size:14px;margin-bottom:18px}
+  .shape{list-style:none;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;margin-top:40px}
+  .shape li{border-top:4px solid var(--encre);padding-top:16px}
+  .shape b{display:block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--encre);margin-bottom:8px}
+  .shape span{font-family:var(--serif);font-size:20px;line-height:1.35}
+  .ticket li.next b{color:var(--noir);border:1.5px dashed var(--noir);border-radius:999px;padding:1px 6px;text-align:center;font-size:11px}
+  .ticket li.next{color:var(--gris);font-weight:500}
+  @media (max-width:900px){
+    .paris{grid-template-columns:minmax(0,1fr)}
+    .shape{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+  }
 </style>
 
 <header class="bar">
   <div class="wrap">
     <a class="brand" href="./" style="text-decoration:none">New Health <i style="font-style:normal">Garage</i></a>
     <nav>
+      <a href="#paris">Paris</a>
       <a href="#order">Where we are</a>
-      <a href="#bench">Topics</a>
-      <a href="#pre">Waitlist</a>
-      <a href="#crew">Get involved</a>
+      <a href="#todo">To-do list</a>
+      <a href="#talks">Topics</a>
       <a href="#bay">The venue</a>
       <a href="#counter">Questions</a>
     </nav>
@@ -195,150 +250,186 @@
 <div class="hero">
   <div class="door" aria-hidden="true"></div>
   <div class="wrap inner">
-    <div class="tag"><i></i>Under construction · Brussels · 28.01.2027</div>
+    <div class="tag"><i></i>Built in public · WAT Garage · 28.01.2027</div>
     <h1><span class="nh">New Health</span>Garage</h1>
-    <p class="lede">Every great tech company started in a garage. European health tech never had one. <em>We're building one in Brussels.</em></p>
+    <p class="lede">Every great tech company started in a garage. European health tech never had one. <em>On 28 January, it gets one in Brussels.</em></p>
     <div class="meta">
-      <span><b>Brussels</b></span>
-      <span><b>Founders · investors · doctors</b></span>
+      <span><b>After a sold-out launch</b> · Paris</span>
+      <span><b>WAT Garage</b> · Brussels</span>
       <span><b>Thursday</b> · 28 January 2027</span>
+      <span><b>One day</b> · free</span>
     </div>
     <div class="cta">
       <a class="btn" href="https://symp.notion.site/421b373d57dc81a1a3d1f05caf6992c9" target="_blank" rel="noopener">Join the waitlist</a>
-      <a class="btn ghost" href="#order">See where we are</a>
+      <a class="btn ghost" href="#todo">Help us build it</a>
     </div>
   </div>
 </div>
 <div class="stripe" aria-hidden="true"></div>
 
 <div class="ticker" aria-hidden="true"><div>
-  <span>Under construction</span><span class="dot">●</span><span>Everyday spaces</span><span class="dot">●</span><span>Doctors</span><span class="dot">●</span><span>First customers</span><span class="dot">●</span><span>Practitioners</span><span class="dot">●</span><span>The clinic</span><span class="dot">●</span><span>Capital</span><span class="dot">●</span>
-  <span>Under construction</span><span class="dot">●</span><span>Everyday spaces</span><span class="dot">●</span><span>Doctors</span><span class="dot">●</span><span>First customers</span><span class="dot">●</span><span>Practitioners</span><span class="dot">●</span><span>The clinic</span><span class="dot">●</span><span>Capital</span><span class="dot">●</span>
-  <span>Under construction</span><span class="dot">●</span><span>Everyday spaces</span><span class="dot">●</span><span>Doctors</span><span class="dot">●</span><span>First customers</span><span class="dot">●</span><span>Practitioners</span><span class="dot">●</span><span>The clinic</span><span class="dot">●</span><span>Capital</span><span class="dot">●</span>
-  <span>Under construction</span><span class="dot">●</span><span>Everyday spaces</span><span class="dot">●</span><span>Doctors</span><span class="dot">●</span><span>First customers</span><span class="dot">●</span><span>Practitioners</span><span class="dot">●</span><span>The clinic</span><span class="dot">●</span><span>Capital</span><span class="dot">●</span>
+  <span>Paris · sold out</span><span class="dot">●</span><span>Brussels · next</span><span class="dot">●</span><span>Built in public</span><span class="dot">●</span><span>Help us build it</span><span class="dot">●</span><span>Paris · sold out</span><span class="dot">●</span><span>Brussels · next</span><span class="dot">●</span><span>Built in public</span><span class="dot">●</span><span>Help us build it</span><span class="dot">●</span><span>Paris · sold out</span><span class="dot">●</span><span>Brussels · next</span><span class="dot">●</span><span>Built in public</span><span class="dot">●</span><span>Help us build it</span><span class="dot">●</span><span>Paris · sold out</span><span class="dot">●</span><span>Brussels · next</span><span class="dot">●</span><span>Built in public</span><span class="dot">●</span><span>Help us build it</span><span class="dot">●</span>
 </div></div>
+
+<section id="paris">
+  <div class="wrap paris">
+    <div>
+      <div class="label" data-n="01">Where it started</div>
+      <span class="stamp">Sold out</span>
+      <p class="big">350+<small>requests for 150 seats</small></p>
+    </div>
+    <div>
+      <h2>Paris was too small.</h2>
+      <p class="intro">We launched New Health in Paris on 25 November 2026, with one evening and one manifesto. The evening sold out and the waitlist kept growing. So the next one is a full day, in Brussels.</p>
+    </div>
+  </div>
+</section>
 
 <section id="order">
   <div class="wrap">
-    <div class="label" data-n="01">Where we are</div>
+    <div class="label" data-n="02">Where we are</div>
     <div class="order">
       <div>
-        <p class="manifesto">Europe has the science and the doctors, but no place where the people building health companies can meet and compare notes. <em>We're putting one together, step by step.</em></p>
+        <p class="manifesto">We're building this like a startup, <em>because we are startups.</em></p>
+        <p class="sub">We ship what's ready and say what isn't. Here's where we are today, and what's still on the to-do list.</p>
       </div>
       <div class="ticket">
-        <h3>Where we are <span>Updated 24.11.2026</span></h3>
+        <h3>Shipped <span>Updated 24.11.2026</span></h3>
         <ul>
-          <li><b>DONE</b>Brussels</li>
           <li><b>DONE</b>Thursday 28 January 2027</li>
-          <li><b>DONE</b>For founders, investors and doctors</li>
-          <li class="open"><b>OPEN</b><span><em>The venue</em> · a Renault garage, being confirmed</span></li>
-          <li class="open"><b>OPEN</b><span><em>The hours</em> · a full day, or afternoon into evening</span></li>
-          <li class="open"><b>OPEN</b><span><em>The format</em> · talks, workshops, or both</span></li>
-          <li class="open"><b>OPEN</b><span><em>The speakers</em> · announced once confirmed</span></li>
-          <li class="open"><b>OPEN</b><span><em>The ticket</em> · free or paid, not decided yet</span></li>
+          <li><b>DONE</b>The venue · WAT Garage, Brussels</li>
+          <li><b>DONE</b>One day, around 300 people</li>
+          <li><b>DONE</b>Talks and networking, one stage</li>
+          <li><b>DONE</b>Free, every request read one by one</li>
+          <li class="next"><b>NEXT</b><span>Speakers, partners, food, drinks · <a href="#todo">see the to-do list</a></span></li>
         </ul>
       </div>
     </div>
   </div>
 </section>
 
-<section id="bench">
+<section id="todo" class="floor">
   <div class="wrap">
-    <div class="label" data-n="02">On the workbench</div>
+    <div class="label" data-n="03">The to-do list</div>
+    <h2>Help us build it.</h2>
+    <p class="intro">This is what's still open. If you can help with one of them, send us a message. Every message gets an answer.</p>
+    <div class="todo">
+      <article class="task "><div class="top"><span class="box" aria-hidden="true"></span><span class="code">T-01</span></div><h3>Speakers</h3><p>The people who've actually built health companies in Europe. Know one? Introduce us.</p><a href="https://symp.notion.site/421b373d57dc81138444f99cbdd74dc0" target="_blank" rel="noopener">Help with this →</a></article>
+      <article class="task "><div class="top"><span class="box" aria-hidden="true"></span><span class="code">T-02</span></div><h3>Partners</h3><p>Companies and funds who want to help keep the day free.</p><a href="https://symp.notion.site/421b373d57dc81138444f99cbdd74dc0" target="_blank" rel="noopener">Help with this →</a></article>
+      <article class="task "><div class="top"><span class="box" aria-hidden="true"></span><span class="code">T-03</span></div><h3>Coffee</h3><p>Something good to start the day with.</p><a href="https://symp.notion.site/421b373d57dc81138444f99cbdd74dc0" target="_blank" rel="noopener">Help with this →</a></article>
+      <article class="task "><div class="top"><span class="box" aria-hidden="true"></span><span class="code">T-04</span></div><h3>Food trucks</h3><p>Trucks that can drive up a ramp and park inside a garage.</p><a href="https://symp.notion.site/421b373d57dc81138444f99cbdd74dc0" target="_blank" rel="noopener">Help with this →</a></article>
+      <article class="task "><div class="top"><span class="box" aria-hidden="true"></span><span class="code">T-05</span></div><h3>Tastings</h3><p>Belgian food and drink makers who want people to taste what they make.</p><a href="https://symp.notion.site/421b373d57dc81138444f99cbdd74dc0" target="_blank" rel="noopener">Help with this →</a></article>
+      <article class="task "><div class="top"><span class="box" aria-hidden="true"></span><span class="code">T-06</span></div><h3>Drinks</h3><p>Something to raise a glass with at the end of the day.</p><a href="https://symp.notion.site/421b373d57dc81138444f99cbdd74dc0" target="_blank" rel="noopener">Help with this →</a></article>
+      <article class="task "><div class="top"><span class="box" aria-hidden="true"></span><span class="code">T-07</span></div><h3>Getting the word out</h3><p>Newsletters, communities, podcasts, group chats.</p><a href="https://symp.notion.site/421b373d57dc81138444f99cbdd74dc0" target="_blank" rel="noopener">Help with this →</a></article>
+      <article class="task "><div class="top"><span class="box" aria-hidden="true"></span><span class="code">T-08</span></div><h3>Photos and video</h3><p>Someone to capture the day.</p><a href="https://symp.notion.site/421b373d57dc81138444f99cbdd74dc0" target="_blank" rel="noopener">Help with this →</a></article>
+      <article class="task other"><div class="top"><span class="box" aria-hidden="true"></span><span class="code">T-09</span></div><h3>Something we missed</h3><p>Got an idea we haven't thought of? Tell us.</p><a href="https://symp.notion.site/421b373d57dc81138444f99cbdd74dc0" target="_blank" rel="noopener">Help with this →</a></article>
+    </div>
+  </div>
+</section>
+
+<section id="day">
+  <div class="wrap">
+    <div class="label" data-n="04">The day</div>
+    <h2>The shape of the day.</h2>
+    <p class="intro">Times come once the speakers are set. Come for the whole day, or for the talks you care about.</p>
+    <ul class="shape">
+      <li><b>Morning</b><span>Coffee, then the first talks.</span></li>
+      <li><b>Midday</b><span>Food trucks drive into the garage.</span></li>
+      <li><b>Afternoon</b><span>More talks, more time to talk.</span></li>
+      <li><b>End of day</b><span>Drinks, and whatever happens next.</span></li>
+    </ul>
+  </div>
+</section>
+
+<section id="talks">
+  <div class="wrap">
+    <div class="label" data-n="05">The talks</div>
     <h2>The topics we're working on.</h2>
-    <p class="intro">Ideas for now, not a programme.</p>
+    <p class="intro">Talks on one stage, with networking in between. Speakers are announced here as they confirm.</p>
     <div class="grid">
       <article class="card"><span class="code">Q-01</span><h3>The money</h3><p>Who pays for the health the system won't fund?</p><span class="tba">Speakers · to come</span></article>
       <article class="card"><span class="code">Q-02</span><h3>Your first customers</h3><p>Where did they come from, and why did they stay?</p><span class="tba">Speakers · to come</span></article>
       <article class="card"><span class="code">Q-03</span><h3>The doctors</h3><p>What do clinicians wish founders knew before writing the first line of code?</p><span class="tba">Speakers · to come</span></article>
       <article class="card"><span class="code">Q-04</span><h3>Working for practitioners</h3><p>What do people who see patients all day actually use?</p><span class="tba">Speakers · to come</span></article>
       <article class="card"><span class="code">Q-05</span><h3>The future of the clinic</h3><p>What does a clinic look like when most of it happens online?</p><span class="tba">Speakers · to come</span></article>
-      <a class="card yours" href="#pre"><span class="code">Q-06</span><h3>Your topic</h3><p>Suggest a topic or a speaker when you join the waitlist.</p><span class="tba">Open</span></a>
-    </div>
-  </div>
-</section>
-
-<section id="pre" class="floor">
-  <div class="wrap">
-    <div class="label" data-n="03">Waitlist</div>
-    <h2>Be the first to know.</h2>
-    <p class="intro">It takes a minute and commits you to nothing.</p>
-    <div class="bays">
-      <div class="bay"><span class="n">A</span><h3>The details first</h3><p>You get the venue and the programme before the public announcement.</p></div>
-      <div class="bay"><span class="n">B</span><h3>The link first</h3><p>You get the registration link before anyone else.</p></div>
-      <div class="bay"><span class="n">C</span><h3>Suggest a topic</h3><p>Tell us which topic or speaker would make you come.</p></div>
-    </div>
-    <div class="go">
-      <a class="btn" href="https://symp.notion.site/421b373d57dc81a1a3d1f05caf6992c9" target="_blank" rel="noopener">Join the waitlist</a>
-      <small>One minute · opens in a new tab</small>
-    </div>
-  </div>
-</section>
-
-<section id="crew">
-  <div class="wrap">
-    <div class="label" data-n="04">The crew</div>
-    <h2>Help us build it.</h2>
-    <div class="crew">
-      <div class="proof">
-        <span class="big">350+</span>
-        <h3>Sign-ups for one evening in Paris</h3>
-        <p>For the New Health launch evening in Paris, on 25 November 2026. Brussels is the next edition.</p>
-      </div>
-      <div class="join">
-        <h3>Not a founder?</h3>
-        <p>Investors, doctors, brands, venues, media: tell us how you'd like to get involved.</p>
-        <div class="eco"><span>Partner</span><span>Host a workshop</span><span>Lend a venue</span><span>Spread the word</span></div>
-        <a class="btn ghost" href="https://symp.notion.site/421b373d57dc81138444f99cbdd74dc0" target="_blank" rel="noopener">Get involved</a>
-      </div>
+      <a class="card yours" href="https://symp.notion.site/421b373d57dc81138444f99cbdd74dc0" target="_blank" rel="noopener"><span class="code">Q-06</span><h3>Your topic</h3><p>A topic we're missing, or a speaker we should invite? Send us a message.</p><span class="tba">Open</span></a>
     </div>
   </div>
 </section>
 
 <section id="bay">
-  <div class="wrap venue">
-    <div>
-      <div class="label" data-n="05">The bay</div>
-      <h2>The venue we have in mind.</h2>
-      <p class="intro">A round glass Renault showroom in Brussels, under a concrete crown.</p>
-      <ul class="facts">
-        <li><b>SHAPE</b>Round, glass all around, the name still on the crown</li>
-        <li><b>INSIDE</b>Three levels, a showroom floor under a ring-shaped mezzanine</li>
-        <li><b>STATUS</b>Being confirmed. People on the waitlist hear first</li>
-      </ul>
+  <div class="wrap">
+    <div class="venue">
+      <div>
+        <div class="label" data-n="06">The venue</div>
+        <h2>WAT Garage.</h2>
+        <p class="intro">A round glass Renault showroom in Brussels, under a concrete crown. WAT is moving in, and opens the floor to us for the day.</p>
+        <ul class="facts">
+          <li><b>SHAPE</b>Round, glass all around, the name still on the crown</li>
+          <li><b>THE DAY</b>One floor: a stage with a screen, room to talk, room for the food trucks</li>
+          <li><b>RAMP</b>Cars used to drive in. Food trucks can too</li>
+          <li><b>STATUS</b>Being fitted out for events. More photos to come</li>
+          <li><b>ADDRESS</b>In your invite</li>
+        </ul>
+      </div>
+      <figure class="shot">
+        <img src="images/garage-wat-x-new-health.webp" alt="The round glass Renault garage under its concrete crown, with a WAT × New Health banner across the facade" width="960" height="748" loading="lazy">
+        <figcaption>Outside · Brussels</figcaption>
+      </figure>
     </div>
-    <figure class="shot">
-      <img src="images/garage-wat-x-new-health.webp" alt="The round glass Renault garage under its concrete crown, with a WAT × New Health banner across the facade" width="960" height="748" loading="lazy">
-      <span class="wip" aria-hidden="true"></span>
-      <figcaption>The bay · Brussels</figcaption>
-    </figure>
+    <div class="pair">
+      <figure class="shot" style="aspect-ratio:1200/750">
+        <img src="images/garage-interieur.jpg" alt="Inside the garage: a showroom floor under a ring-shaped mezzanine, glass walls all around" width="1200" height="750" loading="lazy">
+        <span class="wip" aria-hidden="true"></span>
+        <figcaption>Inside · before the fit-out</figcaption>
+      </figure>
+      <figure class="shot empty" style="aspect-ratio:1200/750"><span>The stage · photo to come</span></figure>
+    </div>
+  </div>
+</section>
+
+<section id="pre">
+  <div class="wrap">
+    <div class="label" data-n="07">Waitlist</div>
+    <h2>Be the first to know.</h2>
+    <p class="intro">Paris filled up fast. The waitlist gets the programme and the registration link first. It takes a minute and commits you to nothing.</p>
+    <div style="display:flex;flex-wrap:wrap;gap:14px 20px;align-items:center;margin-top:32px">
+      <a class="btn" href="https://symp.notion.site/421b373d57dc81a1a3d1f05caf6992c9" target="_blank" rel="noopener">Join the waitlist</a>
+      <small style="color:var(--gris);font-size:13px">One minute · opens in a new tab</small>
+    </div>
   </div>
 </section>
 
 <section id="counter">
   <div class="wrap">
-    <div class="label" data-n="06">Asked at the counter</div>
+    <div class="label" data-n="08">Asked at the counter</div>
     <h2>Questions.</h2>
     <div class="faq">
-      <details open><summary>Does joining the waitlist guarantee me a spot?</summary><p>No. It means you get the registration link first.</p></details>
+      <details open><summary>Is it free?</summary><p>Yes. Because it's free, we read every request one by one.</p></details>
+      <details><summary>Does joining the waitlist guarantee me a spot?</summary><p>No. It means you get the programme and the registration link first.</p></details>
+      <details><summary>Can I help?</summary><p>Please do. Pick something on the to-do list, or tell us what we missed.</p></details>
+      <details><summary>Do I have to stay all day?</summary><p>No. Come for the talks you care about.</p></details>
       <details><summary>Is this a longevity event?</summary><p>No. It's about how companies that help people feel better day to day get built, funded and trusted.</p></details>
       <details><summary>Why Brussels?</summary><p>It's the capital of Europe, less than two hours by train from Paris, Amsterdam and Cologne.</p></details>
-      <details><summary>Who's behind it?</summary><p>The team behind New Health, the movement of everyday-health startups, with people from the Brussels ecosystem.</p></details>
+      <details><summary>Who's behind it?</summary><p>The team behind New Health, the movement of everyday-health startups, hosted by WAT in its new garage. And anyone who helps us build it.</p></details>
     </div>
   </div>
 </section>
 
 <section id="book" class="book">
   <div class="wrap">
-    <h2>Join the waitlist.</h2>
-    <p class="intro">Be the first to know when registration opens.</p>
-    <a class="btn" href="https://symp.notion.site/421b373d57dc81a1a3d1f05caf6992c9" target="_blank" rel="noopener">Join the waitlist</a>
+    <h2>See you in the garage.</h2>
+    <p class="intro">Join the waitlist, or pick something on the to-do list.</p>
+    <div style="display:flex;flex-wrap:wrap;gap:14px;justify-content:center">
+      <a class="btn" href="https://symp.notion.site/421b373d57dc81a1a3d1f05caf6992c9" target="_blank" rel="noopener">Join the waitlist</a>
+      <a class="btn" href="#todo" style="background:transparent;color:var(--papier-clair)">Help us build it</a>
+    </div>
   </div>
 </section>
 
 <footer>
   <div class="wrap">
-    <span><b>New Health Garage</b> · Brussels · 28.01.2027 · under construction</span>
+    <span><b>New Health Garage</b> · WAT Garage, Brussels · 28.01.2027 · built in public</span>
     <span>#NewHealth</span>
   </div>
 </footer>
