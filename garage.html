@@ -1,0 +1,344 @@
+<title>New Health · The Garage</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="icon" type="image/png" href="icon.png">
+<link rel="apple-touch-icon" href="icon.png">
+<meta name="description" content="New Health · The Garage. A gathering in Brussels for the people building Europe's health companies. Pre-register to be the first to know.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,300..900;1,400..700&family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --encre:#15239B; --encre-clair:#3C48B8; --noir:#101116;
+    --papier:#E8E8EC; --papier-clair:#F3F3F6; --gris:#5C5E6B; --filet:#C9C9D2;
+    --sans:"Libre Franklin","Helvetica Neue",Arial,sans-serif;
+    --serif:"Newsreader",Georgia,"Times New Roman",serif;
+    --pad-l:max(clamp(16px,4vw,48px), env(safe-area-inset-left, 0px));
+    --pad-r:max(clamp(16px,4vw,48px), env(safe-area-inset-right, 0px));
+    --stripes:repeating-linear-gradient(-45deg,var(--encre) 0 14px,var(--papier) 14px 28px);
+    color-scheme:light;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--papier);color:var(--noir);font-family:var(--sans);font-size:17px;line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:11;background:var(--papier)}
+  a{color:inherit}
+  a:focus-visible,summary:focus-visible{outline:3px solid var(--encre-clair);outline-offset:3px}
+  .wrap{max-width:1200px;margin:0 auto;padding-left:var(--pad-l);padding-right:var(--pad-r)}
+
+  .draft{background:var(--noir);color:var(--papier);font-size:12px;letter-spacing:.08em;text-transform:uppercase;text-align:center;padding:8px var(--pad-r) 8px var(--pad-l)}
+
+  header.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--papier);border-bottom:2px solid var(--noir)}
+  header.bar .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:56px}
+  .brand{font-weight:800;letter-spacing:.04em;text-transform:uppercase;font-size:14px;white-space:nowrap}
+  .brand span{color:var(--encre)}
+  .bar nav{display:flex;gap:22px;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.06em}
+  .bar nav a{text-decoration:none;white-space:nowrap}
+  @media (max-width:1120px){.bar nav{display:none}}
+  .bar nav a:hover{color:var(--encre)}
+  .btn{display:inline-block;background:var(--encre);color:var(--papier-clair);text-decoration:none;font-weight:700;text-transform:uppercase;letter-spacing:.06em;font-size:14px;padding:14px 22px;border-radius:999px;border:2px solid var(--encre);transition:background .2s,color .2s;text-align:center}
+  .btn:hover{background:var(--papier-clair);color:var(--encre)}
+  .btn.sm{padding:9px 16px;font-size:12px;white-space:nowrap}
+  .btn.ghost{background:transparent;color:var(--noir);border-color:var(--noir)}
+  .btn.ghost:hover{background:var(--noir);color:var(--papier)}
+  .hero{position:relative;color:var(--papier-clair);overflow:hidden;
+    background:linear-gradient(90deg,rgba(16,17,22,.86) 0%,rgba(16,17,22,.62) 40%,rgba(16,17,22,.08) 78%,rgba(16,17,22,0) 100%),
+      url("images/garage-facade-renault.webp") 70% 62%/cover no-repeat,var(--noir)}
+  @media (max-width:900px){.hero{background:linear-gradient(180deg,rgba(16,17,22,.78) 0%,rgba(16,17,22,.55) 55%,rgba(16,17,22,.72) 100%),url("images/garage-facade-renault.webp") 50% 72%/cover no-repeat,var(--noir)}}
+  .hero .lede,.hero .meta,.hero .tag{text-shadow:0 1px 12px rgba(16,17,22,.55)}
+  .hero .inner{position:relative;z-index:1;padding-top:clamp(56px,10vw,120px);padding-bottom:clamp(48px,8vw,96px)}
+  .tag{display:inline-flex;gap:10px;align-items:center;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--filet)}
+  .tag i{width:10px;height:10px;border-radius:50%;background:#fff;box-shadow:0 0 0 4px rgba(255,255,255,.15);animation:blink 1.6s infinite}
+  @keyframes blink{50%{opacity:.25}}
+  .hero h1{font-weight:900;text-transform:uppercase;line-height:.84;letter-spacing:-.02em;font-size:clamp(60px,15vw,210px);margin:22px 0 10px}
+  .hero h1 .nh{display:block;font-size:.28em;letter-spacing:.06em;font-weight:700;color:var(--encre-clair);line-height:1.1;margin-bottom:.15em}
+  .hero .lede{font-family:var(--serif);font-size:clamp(22px,2.6vw,32px);line-height:1.3;max-width:760px;color:var(--papier)}
+  .hero .lede em{color:#fff}
+  .hero .meta{display:flex;flex-wrap:wrap;gap:12px 28px;margin:34px 0 36px;font-size:14px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--filet)}
+  .hero .meta b{color:#fff}
+  .hero .cta{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+  .hero .cta small{color:var(--filet);font-size:13px}
+  .hero .btn.ghost{color:var(--papier-clair);border-color:var(--papier-clair)}
+  .hero .btn.ghost:hover{background:var(--papier-clair);color:var(--noir)}
+  .door{position:absolute;inset:0;z-index:2;background:repeating-linear-gradient(to bottom,#2a2c36 0 46px,#1c1d25 46px 50px);animation:rollup 1.6s cubic-bezier(.7,0,.2,1) .35s forwards;pointer-events:none}
+  .door::after{content:"";position:absolute;left:0;right:0;bottom:0;height:18px;background:var(--stripes)}
+  @keyframes rollup{to{transform:translateY(-101%)}}
+  .stripe{height:18px;background:var(--stripes)}
+
+  .ticker{background:var(--encre);color:var(--papier-clair);overflow:hidden;white-space:nowrap;font-weight:800;text-transform:uppercase;letter-spacing:.12em;font-size:14px;padding:12px 0}
+  .ticker div{display:inline-block;animation:tick 38s linear infinite}
+  .ticker span{margin:0 22px;opacity:.95}
+  .ticker span.dot{opacity:.5;margin:0}
+  @keyframes tick{to{transform:translateX(-50%)}}
+
+  section{padding:clamp(64px,9vw,120px) 0;border-bottom:2px solid var(--noir)}
+  .label{display:flex;align-items:center;gap:14px;font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--encre);margin-bottom:28px}
+  .label::before{content:attr(data-n);display:inline-grid;place-items:center;min-width:44px;height:28px;padding:0 10px;border:2px solid var(--encre);border-radius:999px;letter-spacing:.06em}
+  h2{font-weight:900;text-transform:uppercase;letter-spacing:-.01em;line-height:.95;font-size:clamp(38px,6vw,76px);margin-bottom:22px;max-width:980px;text-wrap:balance}
+  .intro{font-family:var(--serif);font-size:clamp(20px,2.1vw,26px);line-height:1.35;max-width:780px;color:var(--noir)}
+  .order{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(24px,5vw,64px);align-items:start}
+  .order .manifesto{font-family:var(--serif);font-size:clamp(28px,3.6vw,48px);line-height:1.15}
+  .order .manifesto em{color:var(--encre)}
+  .order .sub{font-family:var(--serif);font-size:clamp(19px,1.8vw,22px);line-height:1.4;color:var(--gris);margin-top:24px;max-width:40ch}
+  .ticket{background:var(--papier-clair);border:2px solid var(--noir);border-radius:22px;padding:26px;position:relative;overflow:hidden}
+  .ticket::before{content:"";position:absolute;left:0;right:0;top:0;height:10px;background:var(--stripes)}
+  .ticket h3{font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:800;margin:8px 0 16px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+  .ticket h3 span{color:var(--gris);font-weight:700}
+  .ticket ul{list-style:none}
+  .ticket li{display:flex;gap:12px;align-items:baseline;padding:11px 0;border-top:1px dashed var(--filet);font-weight:600}
+  .ticket li b{font-size:12px;color:var(--encre);min-width:52px;flex:none}
+  .ticket li.open b{color:var(--noir);border:1.5px dashed var(--noir);border-radius:999px;padding:1px 0;text-align:center;font-size:11px}
+  .ticket li.open{color:var(--gris);font-weight:500}
+  .ticket li.open em{font-style:normal;color:var(--noir);font-weight:600}
+  .ticket .x{text-decoration:line-through;color:var(--gris);font-weight:500}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-top:40px}
+  .card{background:var(--papier-clair);border:2px solid var(--noir);border-radius:22px;padding:24px;display:flex;flex-direction:column;gap:10px;min-height:210px;transition:transform .2s, box-shadow .2s;min-width:0}
+  .card:hover{transform:translate(-3px,-3px);box-shadow:6px 6px 0 var(--encre)}
+  .card .code{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--encre)}
+  .card h3{font-size:24px;font-weight:800;line-height:1.1;text-transform:uppercase}
+  .card p{color:var(--gris);font-size:15px}
+  .card .tba{margin-top:auto;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--noir)}
+  .card.yours{background:transparent;border-style:dashed;border-color:var(--gris);text-decoration:none}
+  .card.yours h3{color:var(--gris)}
+  .card.yours:hover{border-color:var(--encre);box-shadow:none}
+  .card.yours:hover h3{color:var(--encre)}
+  .floor{background:var(--noir);color:var(--papier-clair)}
+  .floor h2,.floor .intro{color:var(--papier-clair)}
+  .floor .label{color:var(--encre-clair)}
+  .floor .label::before{border-color:var(--encre-clair)}
+  .bays{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin-top:44px;border:2px solid var(--papier-clair);border-radius:22px;overflow:hidden}
+  .bay{padding:24px 22px 28px;border-right:2px solid var(--papier-clair);position:relative;min-height:260px;display:flex;flex-direction:column;gap:10px}
+  .bay:last-child{border-right:0}
+  .bay::before{content:"";position:absolute;left:0;right:0;top:0;height:10px;background:repeating-linear-gradient(-45deg,var(--encre-clair) 0 10px,transparent 10px 20px)}
+  .bay .n{font-weight:900;font-size:64px;line-height:1;margin-top:14px;color:var(--encre-clair)}
+  .bay h3{font-size:20px;font-weight:800;text-transform:uppercase;line-height:1.15}
+  .bay p{font-size:15px;color:var(--filet)}
+  .floor .go{display:flex;flex-wrap:wrap;gap:14px 20px;align-items:center;margin-top:36px}
+  .floor .go small{color:var(--filet);font-size:13px}
+  .floor .btn{background:var(--papier-clair);color:var(--encre);border-color:var(--papier-clair)}
+  .floor .btn:hover{background:transparent;color:var(--papier-clair)}
+  .crew{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:18px;margin-top:40px}
+  .proof{border:2px solid var(--noir);border-radius:22px;padding:26px;background:var(--papier-clair);display:flex;flex-direction:column;gap:10px}
+  .proof .big{font-weight:900;font-size:clamp(64px,8vw,104px);line-height:.9;letter-spacing:-.02em;color:var(--encre)}
+  .proof h3{font-size:20px;font-weight:800;text-transform:uppercase;line-height:1.15}
+  .proof p{font-family:var(--serif);font-size:19px;line-height:1.4}
+  .join{border:2px dashed var(--gris);border-radius:22px;padding:26px;display:flex;flex-direction:column;gap:16px}
+  .join h3{font-size:24px;font-weight:900;text-transform:uppercase;line-height:1.05}
+  .join p{font-family:var(--serif);font-size:19px;line-height:1.4}
+  .eco{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+  .eco span{border:2px solid var(--noir);border-radius:999px;padding:8px 16px;font-weight:700;font-size:14px}
+  .join .btn{align-self:flex-start;margin-top:auto}
+  .venue{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(24px,5vw,64px);align-items:center}
+  .shot{margin:0;border:2px solid var(--noir);border-radius:22px;overflow:hidden;background:var(--noir);position:relative;aspect-ratio:960/748;max-width:100%}
+  .shot img{display:block;width:100%;height:100%;object-fit:cover}
+  .shot figcaption{position:absolute;left:14px;bottom:14px;background:var(--papier-clair);color:var(--noir);border:2px solid var(--noir);border-radius:999px;padding:6px 12px;font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+  .shot .wip{position:absolute;left:-12px;right:-12px;top:16px;height:22px;background:var(--stripes);transform:rotate(-3deg);border-block:2px solid var(--noir)}
+  .facts{list-style:none;margin-top:28px}
+  .facts li{display:flex;gap:14px;padding:14px 0;border-top:1px solid var(--filet);font-weight:600}
+  .facts li b{color:var(--encre);font-size:12px;letter-spacing:.12em;min-width:68px;padding-top:3px;flex:none}
+  details{border-top:2px solid var(--noir);padding:22px 0}
+  details:last-of-type{border-bottom:2px solid var(--noir)}
+  summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:20px;font-weight:800;font-size:clamp(19px,2vw,24px);text-transform:uppercase}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"+";font-weight:400;font-size:30px;line-height:.8;color:var(--encre);transition:transform .2s}
+  details[open] summary::after{transform:rotate(45deg)}
+  details p{font-family:var(--serif);font-size:20px;line-height:1.4;max-width:760px;margin-top:14px}
+  .faq{margin-top:40px}
+  .book{background:var(--encre);color:var(--papier-clair);text-align:center;border-bottom:0}
+  .book h2{color:#fff;margin:0 auto 18px}
+  .book .intro{color:var(--papier);margin:0 auto 34px}
+  .book .btn{background:var(--papier-clair);color:var(--encre);border-color:var(--papier-clair);font-size:16px;padding:18px 30px}
+  .book .btn:hover{background:transparent;color:var(--papier-clair)}
+  .counter{display:flex;justify-content:center;gap:clamp(18px,5vw,60px);margin:0 0 40px;flex-wrap:wrap}
+  .counter div{font-weight:900;font-size:clamp(44px,7vw,88px);line-height:1}
+  .counter small{display:block;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--filet);margin-top:8px}
+
+  footer{background:var(--noir);color:var(--filet);font-size:13px;padding:28px 0}
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+  footer b{color:var(--papier-clair)}
+
+  @media (max-width:900px){
+    .bar nav{display:none}
+    .order,.crew,.venue{grid-template-columns:minmax(0,1fr)}
+    .bays{grid-template-columns:minmax(0,1fr)}
+    .bay{border-right:0;border-bottom:2px solid var(--papier-clair);min-height:0}
+    .bay:last-child{border-bottom:0}
+    .bay .n{font-size:44px}
+  }
+  @media (max-width:400px){
+    .brand span,.brand i{display:none}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .door{display:none}
+    .ticker div,.tag i{animation:none}
+    .card,.card:hover{transition:none;transform:none}
+    html{scroll-behavior:auto}
+  }
+</style>
+
+<header class="bar">
+  <div class="wrap">
+    <a class="brand" href="./" style="text-decoration:none">New Health <span>·</span> <i style="font-style:normal">The Garage</i></a>
+    <nav>
+      <a href="#order">Where we are</a>
+      <a href="#bench">Topics</a>
+      <a href="#pre">Pre-register</a>
+      <a href="#crew">Get involved</a>
+      <a href="#bay">The venue</a>
+      <a href="#counter">Questions</a>
+    </nav>
+    <a class="btn sm" href="#pre">Pre-register</a>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="door" aria-hidden="true"></div>
+  <div class="wrap inner">
+    <div class="tag"><i></i>Under construction · Brussels · 2027</div>
+    <h1><span class="nh">New Health</span>The Garage</h1>
+    <p class="lede">Every great tech company started in a garage. European health tech never had one. <em>We're building one in Brussels.</em></p>
+    <div class="meta">
+      <span><b>Brussels</b> · 2027</span>
+      <span><b>Founders · investors · doctors</b></span>
+      <span><b>Date</b> · to come</span>
+    </div>
+    <div class="cta">
+      <a class="btn" href="https://symp.notion.site/421b373d57dc81a1a3d1f05caf6992c9" target="_blank" rel="noopener">Pre-register</a>
+      <a class="btn ghost" href="#order">See where we are</a>
+    </div>
+  </div>
+</div>
+<div class="stripe" aria-hidden="true"></div>
+
+<div class="ticker" aria-hidden="true"><div>
+  <span>Under construction</span><span class="dot">●</span><span>Everyday spaces</span><span class="dot">●</span><span>Doctors</span><span class="dot">●</span><span>First customers</span><span class="dot">●</span><span>Practitioners</span><span class="dot">●</span><span>The clinic</span><span class="dot">●</span><span>Capital</span><span class="dot">●</span>
+  <span>Under construction</span><span class="dot">●</span><span>Everyday spaces</span><span class="dot">●</span><span>Doctors</span><span class="dot">●</span><span>First customers</span><span class="dot">●</span><span>Practitioners</span><span class="dot">●</span><span>The clinic</span><span class="dot">●</span><span>Capital</span><span class="dot">●</span>
+  <span>Under construction</span><span class="dot">●</span><span>Everyday spaces</span><span class="dot">●</span><span>Doctors</span><span class="dot">●</span><span>First customers</span><span class="dot">●</span><span>Practitioners</span><span class="dot">●</span><span>The clinic</span><span class="dot">●</span><span>Capital</span><span class="dot">●</span>
+  <span>Under construction</span><span class="dot">●</span><span>Everyday spaces</span><span class="dot">●</span><span>Doctors</span><span class="dot">●</span><span>First customers</span><span class="dot">●</span><span>Practitioners</span><span class="dot">●</span><span>The clinic</span><span class="dot">●</span><span>Capital</span><span class="dot">●</span>
+</div></div>
+
+<section id="order">
+  <div class="wrap">
+    <div class="label" data-n="01">Where we are</div>
+    <div class="order">
+      <div>
+        <p class="manifesto">Europe has the science and the doctors, but no place where the people building health companies can meet and compare notes. <em>We're putting one together, step by step.</em></p>
+      </div>
+      <div class="ticket">
+        <h3>Where we are <span>Updated 24.11.2026</span></h3>
+        <ul>
+          <li><b>DONE</b>Brussels</li>
+          <li><b>DONE</b>For founders, investors and doctors</li>
+          <li class="open"><b>OPEN</b><span><em>The venue</em> · a Renault garage, being confirmed</span></li>
+          <li class="open"><b>OPEN</b><span><em>The date</em> · once the venue and speakers are confirmed</span></li>
+          <li class="open"><b>OPEN</b><span><em>The hours</em> · a full day, or afternoon into evening</span></li>
+          <li class="open"><b>OPEN</b><span><em>The format</em> · talks, workshops, or both</span></li>
+          <li class="open"><b>OPEN</b><span><em>The speakers</em> · announced once confirmed</span></li>
+          <li class="open"><b>OPEN</b><span><em>The ticket</em> · free or paid, not decided yet</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="bench">
+  <div class="wrap">
+    <div class="label" data-n="02">On the workbench</div>
+    <h2>The topics we're working on.</h2>
+    <p class="intro">Ideas for now, not a programme.</p>
+    <div class="grid">
+      <article class="card"><span class="code">Q-01</span><h3>The money</h3><p>Who pays for the health the system won't fund?</p><span class="tba">Speakers · to come</span></article>
+      <article class="card"><span class="code">Q-02</span><h3>Your first customers</h3><p>Where did they come from, and why did they stay?</p><span class="tba">Speakers · to come</span></article>
+      <article class="card"><span class="code">Q-03</span><h3>The doctors</h3><p>What do clinicians wish founders knew before writing the first line of code?</p><span class="tba">Speakers · to come</span></article>
+      <article class="card"><span class="code">Q-04</span><h3>Working for practitioners</h3><p>What do people who see patients all day actually use?</p><span class="tba">Speakers · to come</span></article>
+      <article class="card"><span class="code">Q-05</span><h3>The future of the clinic</h3><p>What does a clinic look like when most of it happens online?</p><span class="tba">Speakers · to come</span></article>
+      <a class="card yours" href="#pre"><span class="code">Q-06</span><h3>Your topic</h3><p>Suggest a topic or a speaker when you pre-register.</p><span class="tba">Open</span></a>
+    </div>
+  </div>
+</section>
+
+<section id="pre" class="floor">
+  <div class="wrap">
+    <div class="label" data-n="03">Pre-register</div>
+    <h2>Be the first to know.</h2>
+    <p class="intro">It takes a minute and commits you to nothing.</p>
+    <div class="bays">
+      <div class="bay"><span class="n">A</span><h3>The details first</h3><p>You get the date, the venue and the programme before the public announcement.</p></div>
+      <div class="bay"><span class="n">B</span><h3>The link first</h3><p>You get the registration link before anyone else.</p></div>
+      <div class="bay"><span class="n">C</span><h3>Suggest a topic</h3><p>Tell us which topic or speaker would make you come.</p></div>
+    </div>
+    <div class="go">
+      <a class="btn" href="https://symp.notion.site/421b373d57dc81a1a3d1f05caf6992c9" target="_blank" rel="noopener">Pre-register</a>
+      <small>One minute · opens in a new tab</small>
+    </div>
+  </div>
+</section>
+
+<section id="crew">
+  <div class="wrap">
+    <div class="label" data-n="04">The crew</div>
+    <h2>Help us build it.</h2>
+    <div class="crew">
+      <div class="proof">
+        <span class="big">350+</span>
+        <h3>Sign-ups for one evening in Paris</h3>
+        <p>For the New Health launch evening in Paris, on 25 November 2026. Brussels is the next edition.</p>
+      </div>
+      <div class="join">
+        <h3>Not a founder?</h3>
+        <p>Investors, doctors, brands, venues, media: tell us how you'd like to get involved.</p>
+        <div class="eco"><span>Partner</span><span>Host a workshop</span><span>Lend a venue</span><span>Spread the word</span></div>
+        <a class="btn ghost" href="https://symp.notion.site/421b373d57dc81138444f99cbdd74dc0" target="_blank" rel="noopener">Get involved</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="bay">
+  <div class="wrap venue">
+    <div>
+      <div class="label" data-n="05">The bay</div>
+      <h2>The venue we have in mind.</h2>
+      <p class="intro">A round glass Renault showroom in Brussels, under a concrete crown.</p>
+      <ul class="facts">
+        <li><b>SHAPE</b>Round, glass all around, the name still on the crown</li>
+        <li><b>INSIDE</b>Three levels, a showroom floor under a ring-shaped mezzanine</li>
+        <li><b>STATUS</b>Being confirmed. Pre-registered people hear first</li>
+      </ul>
+    </div>
+    <figure class="shot">
+      <img src="images/garage-facade-renault.webp" alt="The round glass Renault garage under its concrete crown, at sunset" width="960" height="748" loading="lazy">
+      <span class="wip" aria-hidden="true"></span>
+      <figcaption>The bay · Brussels</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section id="counter">
+  <div class="wrap">
+    <div class="label" data-n="06">Asked at the counter</div>
+    <h2>Questions.</h2>
+    <div class="faq">
+      <details open><summary>Does pre-registering guarantee me a spot?</summary><p>No. It means you get the registration link first.</p></details>
+      <details><summary>Is this a longevity event?</summary><p>No. It's about how companies that help people feel better day to day get built, funded and trusted.</p></details>
+      <details><summary>Why Brussels?</summary><p>It's the capital of Europe, less than two hours by train from Paris, Amsterdam and Cologne.</p></details>
+      <details><summary>Who's behind it?</summary><p>The team behind New Health, the movement of everyday-health startups, with people from the Brussels ecosystem.</p></details>
+    </div>
+  </div>
+</section>
+
+<section id="book" class="book">
+  <div class="wrap">
+    <h2>Pre-register.</h2>
+    <p class="intro">Be the first to know when registration opens.</p>
+    <a class="btn" href="https://symp.notion.site/421b373d57dc81a1a3d1f05caf6992c9" target="_blank" rel="noopener">Pre-register</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span><b>New Health · The Garage</b> · Brussels · 2027 · under construction</span>
+    <span>#NewHealth</span>
+  </div>
+</footer>
