@@ -90,10 +90,20 @@
   .cos .who{font-size:15px;font-weight:600}
   .cos .since{font-size:13px;color:var(--gris);font-variant-numeric:tabular-nums}
   .cos .wait{display:block;color:var(--gris);padding:18px 0}
-  .join{margin-top:clamp(36px,5vw,56px);background:var(--encre);color:var(--papier-clair);border:2px solid var(--noir);border-radius:22px;padding:clamp(22px,3vw,32px);display:flex;flex-wrap:wrap;gap:18px 28px;align-items:center;justify-content:space-between;box-shadow:8px 8px 0 var(--jaune)}
-  .join p{font-family:var(--serif);font-size:clamp(19px,2vw,22px);max-width:46ch}
-  .join strong{display:block;font-family:var(--sans);font-weight:900;text-transform:uppercase;font-size:clamp(20px,2.4vw,26px);margin-bottom:6px}
-
+  /* rejoindre : même bloc que la section #rejoindre de l'accueil */
+  .join{background:var(--encre);color:var(--papier-clair);padding-block:clamp(64px,9vw,112px);border-top:2px solid var(--noir)}
+  .join .label{color:rgba(243,243,246,.72)}
+  .join h2{font-weight:900;text-transform:uppercase;letter-spacing:-.01em;line-height:.95;font-size:clamp(36px,5.6vw,72px);margin-bottom:22px;max-width:980px;text-wrap:balance;color:#fff}
+  .join .intro{font-family:var(--serif);font-size:clamp(20px,2.1vw,25px);line-height:1.38;max-width:760px;color:var(--papier)}
+  .join .grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(28px,5vw,64px);align-items:center}
+  .form-card{background:#fff;color:var(--noir);border:2px solid var(--noir);border-radius:22px;padding:26px;box-shadow:8px 8px 0 var(--jaune)}
+  .form-card .bk{display:block;margin-bottom:8px;font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--encre)}
+  .form-card h3{font-weight:900;text-transform:uppercase;font-size:30px;line-height:1;margin-bottom:10px}
+  .form-card > p{font-family:var(--serif);font-size:18px}
+  .form-card ol{list-style:none;margin:14px 0 20px;border-top:2px solid var(--noir)}
+  .form-card li{display:flex;gap:12px;padding:10px 0;border-bottom:1px dashed var(--filet);font-weight:600;font-size:15.5px}
+  .form-card li b{min-width:28px;color:var(--encre)}
+  .form-card .meta{font-size:13px;margin-top:12px;font-weight:600}
   footer{background:var(--noir);color:var(--filet);font-size:13px;padding-block:28px}
   footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px 28px}
   footer b{color:var(--papier-clair)}
@@ -104,6 +114,7 @@
     .engage article,.engage article + article{padding:22px 0;border-left:0}
     .engage article + article{border-top:1px solid var(--filet)}
     .cos li{grid-template-columns:minmax(0,1fr);gap:6px}
+    .join .grid{grid-template-columns:minmax(0,1fr)}
     .head .ast{display:none}
   }
   @media (prefers-reduced-motion:reduce){ .head .ast{animation:none} html{scroll-behavior:auto} }
@@ -174,9 +185,33 @@
     <h2>They signed.</h2>
     <p class="intro">Every company on this list meets the network's five criteria and has agreed to appear here.</p>
     <ul class="cos" id="cos"><li class="wait">Loading the list…</li></ul>
-    <div class="join">
-      <div><strong>Is your company building this kind of health?</strong><p>The application form takes 5 minutes, one question per criterion.</p></div>
-      <a class="btn yellow" href="./#rejoindre">Apply</a>
+  </div>
+</section>
+
+<section id="rejoindre" class="join">
+  <div class="wrap">
+    <div class="grid">
+      <div>
+        <p class="label">Join</p>
+        <h2 class="cond">To the companies building this kind of health: join us.</h2>
+        <p class="intro">If your company meets the five criteria, it co-signs the manifesto, joins the founders' group and takes its place among the companies in the network.</p>
+      </div>
+      <div class="form-card">
+        <span class="bk">Application</span>
+        <h3>The application form</h3>
+        <p>Answer in a few sentences, with figures and names where you can.</p>
+        <ol>
+          <li><b>00</b>Your company, website, contact and topics</li>
+          <li><b>01</b>The everyday issue you work on</li>
+          <li><b>02</b>The person's data and the science behind it</li>
+          <li><b>03</b>Follow-up over time</li>
+          <li><b>04</b>Remote access, wherever people live</li>
+          <li><b>05</b>The doctor who validated your protocol</li>
+          <li><b>06</b>Your consent to appear as a co-signatory</li>
+        </ol>
+        <a class="btn" href="https://symp.notion.site/a672978dd7204e11875d2b76c2d966e3?pvs=105" target="_blank" rel="noopener">Open the application form</a>
+        <p class="meta">Opens in a new tab · 5 minutes</p>
+      </div>
     </div>
   </div>
 </section>
