@@ -180,6 +180,9 @@
   .co .v{font-size:11.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--encre)}
   .co p{font-size:15px;color:var(--gris)}
   .co .who{margin-top:auto;padding-top:12px;border-top:1px dashed var(--filet);font-size:14px;font-weight:600}
+  a.co{color:inherit;text-decoration:none}
+  .co .site{font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--encre)}
+  a.co:hover .site{text-decoration:underline}
   .co.slot{background:transparent;border:2px dashed var(--gris);text-decoration:none;justify-content:center}
   .co.slot .txt{font-weight:900;text-transform:uppercase;font-size:26px;line-height:1;color:var(--gris)}
   .co.slot:hover{border-color:var(--encre);box-shadow:none}
@@ -591,7 +594,8 @@
     function render(data){
       cos.textContent = '';
       (data.boites || []).forEach(function(b){
-        var a = el('article', 'co');
+        var a = el(b.site ? 'a' : 'article', 'co');
+        if(b.site){ a.href = b.site; a.target = '_blank'; a.rel = 'noopener'; }
         var lg = el('div', 'logo');
         if(b.logo){ var img = el('img'); img.src = b.logo; img.alt = b.nom; img.onerror = function(){ lg.textContent = ''; lg.appendChild(el('span','txt',b.nom)); }; lg.appendChild(img); }
         else lg.appendChild(el('span', 'txt', b.nom));
@@ -599,6 +603,7 @@
         a.appendChild(el('span', 'v', b.verticale));
         a.appendChild(el('p', '', b.phrase));
         if(b.fondateurs) a.appendChild(el('div', 'who', b.fondateurs));
+        if(b.site) a.appendChild(el('span', 'site', b.site.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '') + ' \u2197'));
         cos.appendChild(a);
       });
       var slot = el('a', 'co slot'); slot.href = '#rejoindre';

@@ -1,5 +1,5 @@
 {
-  "mis_a_jour": "2026-11-23",
+  "mis_a_jour": "2026-11-25",
   "boites": [
     {
       "nom": "Symp",
@@ -16,7 +16,7 @@
       "phrase": "Prevention that starts from each person's own markers, to act before a problem settles in.",
       "fondateurs": "Sophie Agosta · Khadija Benmansour · Samuel Roze",
       "logo": "logos/logo-kor.png",
-      "site": "",
+      "site": "https://www.kor.care",
       "depuis": "2026-11"
     },
     {
@@ -25,7 +25,7 @@
       "phrase": "Long-term weight and metabolism support, wherever you live.",
       "fondateurs": "Gwen Le Calvez · François-Xavier Trancart",
       "logo": "logos/logo-annette.png",
-      "site": "",
+      "site": "https://www.annette.care",
       "depuis": "2026-11"
     },
     {
@@ -34,7 +34,7 @@
       "phrase": "A pathway designed for women in perimenopause and menopause, wherever they live.",
       "fondateurs": "Maud Pasturaud",
       "logo": "logos/logo-menoclinic.png",
-      "site": "",
+      "site": "https://www.menoclinic.fr",
       "depuis": "2026-11"
     }
   ],
