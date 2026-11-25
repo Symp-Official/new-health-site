@@ -184,7 +184,14 @@
     <p class="label">Co-signatories</p>
     <h2>They signed.</h2>
     <p class="intro">Every company on this list meets the network's five criteria and has agreed to appear here.</p>
-    <ul class="cos" id="cos"><li class="wait">Loading the list…</li></ul>
+    <ul class="cos" id="cos">
+      <!-- cartes:debut -->
+      <li><div class="logo"><img src="logos/logo-symp.png" alt="Symp" loading="lazy"></div><div><div class="v">Digestion · gut-brain axis</div><div class="who">Nicholas Balon-Perin</div></div><span class="since">Since Nov 2026</span></li>
+      <li><div class="logo"><img src="logos/logo-kor.png" alt="Kor" loading="lazy"></div><div><div class="v">Prevention · biomarkers</div><div class="who">Sophie Agosta · Khadija Benmansour · Samuel Roze</div></div><span class="since">Since Nov 2026</span></li>
+      <li><div class="logo"><img src="logos/logo-annette.png" alt="Annette" loading="lazy"></div><div><div class="v">Weight · metabolism</div><div class="who">Gwen Le Calvez · François-Xavier Trancart</div></div><span class="since">Since Nov 2026</span></li>
+      <li><div class="logo"><img src="logos/logo-menoclinic.png" alt="MenoClinic" loading="lazy"></div><div><div class="v">Menopause</div><div class="who">Maud Pasturaud</div></div><span class="since">Since Nov 2026</span></li>
+      <!-- cartes:fin -->
+    </ul>
   </div>
 </section>
 
@@ -252,7 +259,7 @@
     fetch('membres.json', {cache: 'no-store'})
       .then(function(r){ if(!r.ok) throw new Error(r.status); return r.json(); })
       .then(render)
-      .catch(function(){ list.textContent = ''; list.appendChild(el('li', 'wait', "The list could not load. Please reload the page.")); });
+      .catch(function(){ if(list.querySelector('li:not(.wait)')) return; list.textContent = ''; list.appendChild(el('li', 'wait', "The list could not load. Please reload the page.")); });
   })();
 </script>
 </body>

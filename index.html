@@ -489,7 +489,13 @@
     <h2 class="cond">Already on board.</h2>
     <p class="intro">The list grows with every accepted application.</p>
     <div class="cos" id="cos" aria-live="polite">
-      <p class="wait">Loading the list…</p>
+      <!-- cartes:debut -->
+      <a class="co" href="https://symp.co" target="_blank" rel="noopener"><div class="logo"><img src="logos/logo-symp.png" alt="Symp" loading="lazy"></div><span class="v">Digestion · gut-brain axis</span><p>At-home testing and long-term support for people whose digestion weighs on their everyday life. The company that started the movement.</p><div class="who">Nicholas Balon-Perin</div></a>
+      <a class="co" href="https://www.kor.care" target="_blank" rel="noopener"><div class="logo"><img src="logos/logo-kor.png" alt="Kor" loading="lazy"></div><span class="v">Prevention · biomarkers</span><p>Prevention that starts from each person&#x27;s own markers, to act before a problem settles in.</p><div class="who">Sophie Agosta · Khadija Benmansour · Samuel Roze</div></a>
+      <a class="co" href="https://www.annette.care" target="_blank" rel="noopener"><div class="logo"><img src="logos/logo-annette.png" alt="Annette" loading="lazy"></div><span class="v">Weight · metabolism</span><p>Long-term weight and metabolism support, wherever you live.</p><div class="who">Gwen Le Calvez · François-Xavier Trancart</div></a>
+      <a class="co" href="https://www.menoclinic.fr" target="_blank" rel="noopener"><div class="logo"><img src="logos/logo-menoclinic.png" alt="MenoClinic" loading="lazy"></div><span class="v">Menopause</span><p>A pathway designed for women in perimenopause and menopause, wherever they live.</p><div class="who">Maud Pasturaud</div></a>
+      <a class="co slot" href="#rejoindre"><span class="v">Your vertical</span><span class="txt">Your company?</span><p>If it meets the five criteria, it belongs here.</p></a>
+      <!-- cartes:fin -->
     </div>
     <div class="eco" id="eco"></div>
   </div>
@@ -613,7 +619,7 @@
     fetch('membres.json', {cache: 'no-store'})
       .then(function(r){ if(!r.ok) throw new Error(r.status); return r.json(); })
       .then(render)
-      .catch(function(){ cos.textContent = ''; cos.appendChild(el('p', 'wait', "The list of companies could not load. Please reload the page.")); });
+      .catch(function(){ if(cos.querySelector('.co:not(.slot)')) return; cos.textContent = ''; cos.appendChild(el('p', 'wait', "The list of companies could not load. Please reload the page.")); });
   })();
 </script>
 <script>
