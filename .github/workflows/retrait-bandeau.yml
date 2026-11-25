@@ -1,0 +1,48 @@
+# Retire le bandeau « Draft · not public · embargo » de l'accueil et du manifeste
+# le 26/11/2026 à minuit, heure de Paris (23:00 UTC le 25/11).
+# GitHub peut lancer une tâche planifiée avec quelques minutes de retard, et en sauter une
+# quand il est chargé : deux rattrapages suivent (00:30 et 06:00 à Paris). Si le bandeau
+# n'est plus là, la tâche ne fait rien.
+# Lancement à la main (onglet Actions) : « essai » coché = montre ce qui changerait, sans publier.
+name: Retrait du bandeau d'embargo
+
+on:
+  schedule:
+    - cron: "0 23 25 11 *"
+    - cron: "30 23 25 11 *"
+    - cron: "0 5 26 11 *"
+  workflow_dispatch:
+    inputs:
+      essai:
+        description: "Essai : ne rien publier"
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+  pages: write
+
+jobs:
+  retrait:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Retirer le bandeau
+        run: |
+          if [ "$(date -u +%Y)" != "2026" ]; then echo "Hors 2026 : rien à faire"; exit 0; fi
+          sed -i '/^<div class="draft">.*<\/div>$/d' index.html manifeste.html
+          git diff --stat
+
+      - name: Publier
+        if: github.event_name == 'schedule' || inputs.essai == false
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if git diff --quiet; then echo "Bandeau déjà retiré : rien à publier"; exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -am "Remove the draft/embargo banner (26.11.2026, midnight Paris time)"
+          git pull --rebase origin main
+          git push origin HEAD:main
+          gh api -X POST "repos/${{ github.repository }}/pages/builds"
